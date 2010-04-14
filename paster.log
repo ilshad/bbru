@@ -1,0 +1,19 @@
+/usr/local/buildout-eggs/zope.configuration-3.7.1-py2.6.egg/zope/configuration/fields.py:419: UserWarning: You did not specify an i18n translation domain for the 'title' field in /usr/local/buildout-eggs/zope.app.generations-3.5.1-py2.6.egg/zope/app/generations/browser/configure.zcml
+  "'%s' field in %s" % (self.getName(), context.info.file )
+/usr/local/buildout-eggs/zope.configuration-3.7.1-py2.6.egg/zope/configuration/fields.py:419: UserWarning: You did not specify an i18n translation domain for the 'title' field in /usr/local/buildout-eggs/zope.app.component-3.8.4-py2.6.egg/zope/app/component/browser/configure.zcml
+  "'%s' field in %s" % (self.getName(), context.info.file )
+/usr/local/buildout-eggs/zope.configuration-3.7.1-py2.6.egg/zope/configuration/fields.py:419: UserWarning: You did not specify an i18n translation domain for the 'description' field in /usr/local/buildout-eggs/zope.app.principalannotation-3.7.0-py2.6.egg/zope/app/principalannotation/browser.zcml
+  "'%s' field in %s" % (self.getName(), context.info.file )
+/usr/local/buildout-eggs/zope.configuration-3.7.1-py2.6.egg/zope/configuration/fields.py:419: UserWarning: You did not specify an i18n translation domain for the 'title' field in /usr/local/buildout-eggs/zope.app.principalannotation-3.7.0-py2.6.egg/zope/app/principalannotation/browser.zcml
+  "'%s' field in %s" % (self.getName(), context.info.file )
+INFO:ZEO.ClientStorage:[('localhost', 8100)] ClientStorage (pid=3622) created RW/normal for storage: 'bbru'
+INFO:ZEO.cache:created temporary cache file '<fdopen>'
+INFO:ZEO.ClientStorage:[('localhost', 8100)] Testing connection <ManagedClientConnection ('127.0.0.1', 8100)>
+INFO:ZEO.zrpc.Connection(C):(localhost:8100) received handshake 'Z309'
+INFO:ZEO.ClientStorage:[('localhost', 8100)] Server authentication protocol None
+INFO:ZEO.ClientStorage:[('localhost', 8100)] Connected to storage: ('localhost', 8100)
+INFO:ZEO.ClientStorage:[('localhost', 8100)] No verification necessary -- empty cache
+INFO:zope.app.generations:main db: evolving in mode EVOLVEMINIMUM
+INFO:zope.app.generations:main db/zope.app: running install generation
+Starting server in PID 3622.
+serving on http://127.0.0.1:8080
