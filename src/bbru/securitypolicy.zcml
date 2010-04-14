@@ -1,0 +1,48 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="zope"
+    >
+
+  <!-- This file contains sample security policy definition -->
+
+  <include package="zope.securitypolicy" />
+
+  <securityPolicy 
+     component="zope.securitypolicy.zopepolicy.ZopeSecurityPolicy" />
+
+  <unauthenticatedPrincipal
+     id="zope.anybody"
+     title="Unauthenticated User" />
+
+  <unauthenticatedGroup
+     id="zope.Anybody"
+     title="Unauthenticated Users" />
+
+  <authenticatedGroup
+     id="zope.Authenticated"
+     title="Authenticated Users" />
+
+  <everybodyGroup
+     id="zope.Everybody"
+     title="All Users" />
+
+  <role id="zope.Anonymous" title="Everybody"
+        description="All users have this role implicitly" />
+  <grant permission="zope.View" role="zope.Anonymous" />
+
+  <role id="zope.Manager" title="Site Manager" />
+  <grantAll role="zope.Manager" />
+
+  <principal
+     id="zope.manager"
+     title="Manager"
+     login="admin"
+     password="admin"
+     password_manager="Plain Text"
+     />
+
+  <grant
+     role="zope.Manager"
+     principal="zope.manager" />
+
+</configure>

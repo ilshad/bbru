@@ -1,0 +1,40 @@
+# Identify the component configuration used to define the site:
+site-definition ${config:site_zcml}
+
+<zodb>
+
+  <filestorage>
+    path ${config:filestorage}/Data.fs
+    blob-dir ${config:blob}
+  </filestorage>
+
+# Uncomment this if you want to connect to a ZEO server instead:
+#  <zeoclient>
+#    server localhost:8100
+#    storage 1
+#    # ZEO client cache, in bytes
+#    cache-size 20MB
+#    # Uncomment to have a persistent disk cache
+#    #client zeo1
+#  </zeoclient>
+</zodb>
+
+<eventlog>
+  # This sets up logging to both a file and to standard output (STDOUT).
+  # The "path" setting can be a relative or absolute filesystem path or
+  # the tokens STDOUT or STDERR.
+
+  <logfile>
+    path ${config:log}/z3.log
+    formatter zope.exceptions.log.Formatter
+  </logfile>
+
+  <logfile>
+    path STDOUT
+    formatter zope.exceptions.log.Formatter
+  </logfile>
+</eventlog>
+
+# Comment this line to disable developer mode.  This should be done in
+# production
+devmode on

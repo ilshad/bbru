@@ -1,0 +1,18 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:browser="http://namespaces.zope.org/browser">
+
+  <include package="ice.control.zcml" />
+  <include package="ice.control" />
+
+  <configure
+     xmlns:zcml="http://namespaces.zope.org/zcml"
+     zcml:condition="have devmode">
+
+    <include package="ice.control.repl" />
+
+  </configure>
+
+  <include package="bbru" />
+
+</configure>
