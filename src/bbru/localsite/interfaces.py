@@ -2,5 +2,7 @@
 # This code was developed for http://bluebream.ru by its community and
 # placed under Public Domain.
 
-# для удобства импортируем из корня
-from bbru.localsite.interfaces import ISite
+import zope.interface
+
+class ISite(zope.interface.Interface):
+    """Локальный сайт"""

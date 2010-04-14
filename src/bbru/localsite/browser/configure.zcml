@@ -1,0 +1,14 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   i18n_domain="bbru">
+
+  <page
+     for="zope.site.interfaces.IRootFolder"
+     name="add_site"
+     class=".add.Add"
+     permission="zope.ManageServices"
+     menu="control_details"
+     title="Add Site"
+     />
+
+</configure>

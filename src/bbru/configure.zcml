@@ -3,7 +3,7 @@
    xmlns:browser="http://namespaces.zope.org/browser"
    i18n_domain="bbru">
 
-  <browser:defaultSkin name="control" />
+  <include package=".localsite" />
 
   <include file="securitypolicy.zcml" />
 

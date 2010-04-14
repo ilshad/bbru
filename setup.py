@@ -54,6 +54,8 @@ setup(name='bbru',
                         'zope.login',
                         'zope.app.zcmlfiles',
 
+                        'zope.intid',
+
                         'ice.control',
                         ],
       entry_points = """

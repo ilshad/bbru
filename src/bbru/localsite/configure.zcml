@@ -1,0 +1,52 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="bbru">
+
+  <!-- install -->
+  <adapter
+     factory=".config.InitializeSiteConfigurator"
+     for=".interfaces.ISite"
+     name="_initialize"
+     />
+  <subscriber
+     for=".interfaces.ISite
+	  zope.app.container.interfaces.IObjectAddedEvent"
+     handler=".localsite.siteAdded"
+     />
+
+  <!--
+      Content
+    -->
+
+  <interface
+     interface=".interfaces.ISite"
+     type="zope.app.content.interfaces.IContentType"
+     />
+
+  <class class=".localsite.Site">
+    <require
+       interface=".interfaces.ISite"
+       permission="zope.Public"
+       />
+    <require
+       set_schema=".interfaces.ISite"
+       permission="zope.ManageContent"
+       />
+    <require
+       interface="zope.container.interfaces.IReadContainer"
+       permission="zope.Public"
+       />
+    <require
+       interface="zope.container.interfaces.IWriteContainer"
+       permission="zope.ManageContent"
+       />
+    <allow attributes="getSiteManager" />
+    <require
+       attributes="setSiteManager"
+       permission="zope.ManageServices"
+       />
+  </class>
+
+  <include package=".browser" />
+
+</configure>
