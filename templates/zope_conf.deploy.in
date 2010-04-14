@@ -1,0 +1,18 @@
+site-definition ${config:site_zcml}
+
+<zodb>
+  <zeoclient>
+    server localhost:8100
+    storage bbru
+    cache-size 128MB
+    # Uncomment to have a persistent disk cache
+    #client zeo1
+  </zeoclient>
+</zodb>
+
+<eventlog>
+  <logfile>
+    path ${config:log}/z3.log
+    formatter zope.exceptions.log.Formatter
+  </logfile>
+</eventlog>
