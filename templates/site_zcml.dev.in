@@ -3,11 +3,6 @@
   <include package="bbru" />
   <include package="bbru" file="securitypolicy.zcml" />
 
-  <!--
-      Remove bootstrap administrator principal
-      (or change) in production.
-    -->
-
   <principal
      id="zope.manager"
      title="Manager"

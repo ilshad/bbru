@@ -1,0 +1,28 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <include package="bbru" />
+  <include package="bbru" file="securitypolicy.zcml" />
+
+  <!--
+      Uncomment this bootstrap administrator
+      principal (but change password, first)
+      on freash database. I.e. when running
+      it first time.
+
+      Then comment (or remove) back.
+    -->
+
+  <!--principal
+     id="zope.manager"
+     title="Manager"
+     login="admin"
+     password="admin"
+     password_manager="Plain Text"
+     />
+
+  <grant
+     role="zope.Manager"
+     principal="zope.manager"
+     /-->
+
+</configure>
