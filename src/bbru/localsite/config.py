@@ -17,7 +17,7 @@ class InitializeSiteConfigurator(ConfigurationPluginBase):
         try:
             sm = site.getSiteManager()
         except:
-            site.setSiteManager(LocalSiteManager(site))
+            site.setSiteManager(LocalSiteManager(site, False))
             sm = site.getSiteManager()
 
         if u'intids' not in sm:
@@ -27,7 +27,7 @@ class InitializeSiteConfigurator(ConfigurationPluginBase):
             sm.registerUtility(ob, IIntIds)
 
 class UpgradeSiteConfigurator(ConfigurationPluginBase):
-    """Дальнейшие манипуляции по заселению локаьлными компонентами"""
+    """Дальнейшие манипуляции по заселению локальными компонентами"""
 
     dependencies = ('_initialize',)
 

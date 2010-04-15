@@ -28,3 +28,4 @@ class Add(form.Form):
         notify(ObjectCreatedEvent(site))
         name = INameChooser(self.context).chooseName(data['name'], site)
         self.context[name] = site
+        self.request.response.redirect("getControlDetailsContents")
