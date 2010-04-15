@@ -1,0 +1,24 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <include package="bbru" />
+  <include package="bbru" file="securitypolicy" />
+
+  <!--
+      Remove bootstrap administrator principal
+      (or change) in production.
+    -->
+
+  <principal
+     id="zope.manager"
+     title="Manager"
+     login="admin"
+     password="admin"
+     password_manager="Plain Text"
+     />
+
+  <grant
+     role="zope.Manager"
+     principal="zope.manager"
+     />
+
+</configure>

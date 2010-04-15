@@ -1,10 +1,11 @@
 <configure
    xmlns="http://namespaces.zope.org/zope"
-   xmlns:browser="http://namespaces.zope.org/browser"
    i18n_domain="bbru">
 
-  <include package=".localsite" />
+  <include package="ice.control.zcml" />
+  <include package="ice.control" />
+  <include package="ice.control.repl" />
 
-  <include file="securitypolicy.zcml" />
+  <include package=".localsite" />
 
 </configure>

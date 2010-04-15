@@ -3,7 +3,7 @@ build/
 develop-eggs/
 dist/
 eggs/
-etc/zope.conf
+etc/
 parts/
 src/bbru.egg-info/
 var/blob
