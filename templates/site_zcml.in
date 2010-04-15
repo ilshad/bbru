@@ -1,7 +1,7 @@
 <configure xmlns="http://namespaces.zope.org/zope">
 
   <include package="bbru" />
-  <include package="bbru" file="securitypolicy" />
+  <include package="bbru" file="securitypolicy.zcml" />
 
   <!--
       Remove bootstrap administrator principal

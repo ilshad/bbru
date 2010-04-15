@@ -2,9 +2,6 @@
    xmlns="http://namespaces.zope.org/zope"
    i18n_domain="bbru">
   
-  <include package="ice.control.zcml" />
-  <include package="ice.control" />
-  
   <securityPolicy
      component="zope.securitypolicy.zopepolicy.ZopeSecurityPolicy"
      />
