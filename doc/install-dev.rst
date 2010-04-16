@@ -1,13 +1,16 @@
 Развертывание для разработчиков
 ===============================
 
-1) Форкнуть репозиторий git://github.com/astoon/bbru
+1. Форкнуть репозиторий git://github.com/astoon/bbru
 
-2) Сборка, запуск тестов, запуск WSGI-приложения:
+2. Сборка, запуск тестов, запуск WSGI-приложения:
 
   $ python bootstrap.py
+
   $ bin/buildout
+
   $ bin/test
+
   $ bin/paster serve debug.ini
 
 
@@ -18,9 +21,11 @@
 пакетов - зависимостей различных всех приложений, скажем /usr/local/buildout-eggs.
 Для этого в файле ~/.buildout/default.cfg необходимо указать:
 
-[buildout]
-newest=false
-eggs-directory=/usr/local/buildout-eggs
+  [buildout]
+
+  newest=false
+
+  eggs-directory=/usr/local/buildout-eggs
 
 В данной директории buildout-eggs могут находиться одновременно самые разные версии
 одних и тех же пакетов. zc.buildout создает "песочницу" для каждого приложения, и
