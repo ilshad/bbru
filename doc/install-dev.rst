@@ -5,10 +5,10 @@
 
 2) Сборка, запуск тестов, запуск WSGI-приложения:
 
-   $ python bootstrap.py
-   $ bin/buildout
-   $ bin/test
-   $ bin/paster serve debug.ini
+  $ python bootstrap.py
+  $ bin/buildout
+  $ bin/test
+  $ bin/paster serve debug.ini
 
 
 Полезные опции команды bin/buildout
