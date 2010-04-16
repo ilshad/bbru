@@ -1,0 +1,23 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:z3c="http://namespaces.zope.org/z3c"
+   i18n_domain="bbru">
+
+  <z3c:pagelet
+     for="zope.site.interfaces.IRootFolder"
+     name="index.html"
+     class=".rootpage.Pagelet"
+     permission="zope.View"
+     layer="bbru.skin.interfaces.ILayer"
+     />
+
+  <adapter
+     name="link"
+     for="zope.site.interfaces.IRootFolder
+	  z3c.layer.pagelet.IPageletBrowserLayer
+	  .rootpage.Pagelet"
+     provides="z3c.table.interfaces.IColumn"
+     factory="z3c.table.column.IndexLinkColumn"
+     />
+
+</configure>

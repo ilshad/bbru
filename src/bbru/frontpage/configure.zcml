@@ -1,0 +1,17 @@
+<configure
+   xmlns="http://namespaces.zope.org/z3c"
+   i18n_domain="bbru">
+
+  <pagelet
+     for="bbru.ISite"
+     name="index.html"
+     class=".frontpage.Pagelet"
+     permission="zope.View"
+     />
+
+  <template
+     for=".frontpage.Pagelet"
+     template="frontpage.pt"
+     />
+
+</configure>
