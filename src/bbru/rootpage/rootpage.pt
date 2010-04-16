@@ -1,0 +1,9 @@
+<h3><a href="++skin++control">Admin UI</a></h3>
+
+<h3>Sites:</h3>
+<ul>
+  <li tal:repeat="site view/sites">
+    <a tal:attributes="href site/@@absolute_url"
+       tal:content="site/__name__" />
+  </li>
+</ul>

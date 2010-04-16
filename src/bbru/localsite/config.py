@@ -9,7 +9,7 @@ from zope.intid import IIntIds, IntIds
 from zope.site import LocalSiteManager
 from zope.event import notify
 
-class InitializeSiteConfigurator(ConfigurationPluginBase):
+class InitializeConfigurator(ConfigurationPluginBase):
     """Заселение локальными компонентами в момент создания сайта"""
 
     def __call__(self, *args):
@@ -26,10 +26,11 @@ class InitializeSiteConfigurator(ConfigurationPluginBase):
             sm[u'intids'] = ob
             sm.registerUtility(ob, IIntIds)
 
-class UpgradeSiteConfigurator(ConfigurationPluginBase):
-    """Дальнейшие манипуляции по заселению локальными компонентами"""
+class UpgradeConfigurator(ConfigurationPluginBase):
+    """Дальнейшие манипуляции по заселению локальными компонентами,
+    апргейд базы данных при обновлениях кода и т.д. """
 
-    dependencies = ('_initialize',)
+    dependencies = ('_initialize', 'authentication')
 
     def __call__(self, *args):
         site = getObject(self.context)

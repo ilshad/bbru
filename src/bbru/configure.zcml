@@ -10,5 +10,6 @@
   <include package=".skin" />
   <include package=".frontpage" />
   <include package=".rootpage" />
+  <include package=".authentication" />
 
 </configure>

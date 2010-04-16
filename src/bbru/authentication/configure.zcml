@@ -1,0 +1,17 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="bbru">
+
+  <!-- install -->
+  <adapter
+     factory=".config.AuthenticationConfigurator"
+     for="bbru.ISite"
+     name="authentication"
+     />
+  <adapter
+     factory=".config.UserConfigurator"
+     for="bbru.ISite"
+     name="User"
+     />
+
+</configure>

@@ -4,7 +4,7 @@
 
   <!-- install -->
   <adapter
-     factory=".config.InitializeSiteConfigurator"
+     factory=".config.InitializeConfigurator"
      for=".interfaces.ISite"
      name="_initialize"
      />
@@ -12,6 +12,13 @@
      for=".interfaces.ISite
 	  zope.app.container.interfaces.IObjectAddedEvent"
      handler=".localsite.siteAdded"
+     />
+
+  <!-- upgrade site -->
+  <adapter
+     factory=".config.UpgradeConfigurator"
+     for=".interfaces.ISite"
+     name="Upgrade"
      />
 
   <!--

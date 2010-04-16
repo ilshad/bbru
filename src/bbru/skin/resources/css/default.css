@@ -38,9 +38,8 @@ body {
     font-size:14px;
     margin:0;
 }
-}
 ol, ul {
-    list-style: none;
+    list-style: square inside none;
 }
 dt {
     font-weight: bold;
@@ -185,6 +184,22 @@ input[type=checkbox] {
     margin-top: -10px;
     margin-left: -10px;
 }
+
+/**
+*
+* Header
+*
+**/
+
+#header {
+    padding: 10px;
+}
+
+/**
+*
+* Main
+*
+**/
 
 #main {
     padding: 10px;
