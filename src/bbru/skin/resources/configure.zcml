@@ -1,0 +1,23 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   i18n_domain="bbru">
+
+  <resourceDirectory
+     name="img"
+     directory="img"
+     layer="..interfaces.ILayer"
+     />
+
+  <resourceDirectory
+     name="js"
+     directory="js"
+     layer="..interfaces.ILayer"
+     />
+
+  <zrt-resource
+     name="default.css"
+     file="css/default.css"
+     layer="..interfaces.ILayer"
+     />
+
+</configure>

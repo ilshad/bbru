@@ -1,0 +1,21 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   xmlns:z3c="http://namespaces.zope.org/z3c"
+   i18n_domain="bbru">
+
+  <interface
+     interface=".interfaces.ISkin"
+     type="zope.publisher.interfaces.browser.IBrowserSkinType"
+     name="bbru"
+     />
+  
+  <z3c:layout layer=".interfaces.ILayer" template="layout.pt" />
+
+  <browser:defaultSkin name="bbru" />
+
+  <browser:defaultView layer=".interfaces.ILayer" name="index.html" />
+
+  <include package=".resources" />
+
+</configure>
