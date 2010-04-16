@@ -6,7 +6,7 @@ import zope.event
 import zope.schema
 import zope.interface
 import z3c.configurator
-from zope.pluggableauth
+import zope.pluggableauth
 from zope.security.proxy import getObject
 from zope.authentication.interfaces import IAuthentication
 from zope.lifecycleevent import ObjectCreatedEvent, ObjectModifiedEvent
@@ -73,7 +73,7 @@ class AuthenticationConfigurator(z3c.configurator.ConfigurationPluginBase):
         if u'Session Credentials' not in pau.credentialsPlugins:
             pau.credentialsPlugins += (u'Session Credentials',)
 
-class IUser(zope.interface.Interface):
+class ICreateUser(zope.interface.Interface):
     """Этот интерфейс используется для генерации формы конфигуратора ниже.
     """
 
@@ -86,14 +86,14 @@ class IUser(zope.interface.Interface):
     password = zope.schema.Password(
         title=u"Password")
 
-    permissions = zope.schema.List(
-        title=u'Site permissions',
+    roles = zope.schema.List(
+        title=u'Site roles',
         value_type=zope.schema.TextLine(
-            title=u'Permission'),
+            title=u'role'),
         unique=True)
-
-class UserConfigurator(z3c.configurator.SchemaConfigurationPluginBase):
-    """Этоот конфигуратор нужен для того, чтобы:
+    
+class CreateUserConfigurator(z3c.configurator.SchemaConfigurationPluginBase):
+    """Этот конфигуратор нужен для того, чтобы:
 
     - во время разработки на чистых базах данных каждый раз не создавать
     пользователей врчную - устанешь кликать мышой;
@@ -107,7 +107,7 @@ class UserConfigurator(z3c.configurator.SchemaConfigurationPluginBase):
     апгрейде сайта заполнять свою форму.
     """
 
-    schema = IPreinstalledUsers
+    schema = ICreateUser
     dependencies = ('_initialize', 'authentication')
 
     def __call__(self, data):
@@ -116,13 +116,13 @@ class UserConfigurator(z3c.configurator.SchemaConfigurationPluginBase):
         site = getObject(self.context)
         sm = site.getSiteManager()
 
-        self.preinstalled_user(
+        self.create_user(
             site, sm, {'login': data.get('login'),
                        'password': data.get('password'),
                        'title': data.get('title')},
-            site_permissions=data.get('permissions'))
+            site_roles=data.get('roles'))
 
-    def preinstalled_user(self, site, sm, data,
+    def create_user(self, site, sm, data,
                           site_roles=(), site_permissions=(),
                           prefix='bbru.principal.', folder_key=u'principals'):
         auth = sm.getUtility(IAuthentication)

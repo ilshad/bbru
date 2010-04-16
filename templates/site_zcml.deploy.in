@@ -5,18 +5,14 @@
 
   <!--
       Uncomment this bootstrap administrator
-      principal (but change password, first)
-      on freash database. I.e. when running
-      it first time.
-
-      Then comment (or remove) back.
+      principal and set login and password.
     -->
 
   <!--principal
      id="zope.manager"
      title="Manager"
-     login="admin"
-     password="admin"
+     login=""
+     password=""
      password_manager="Plain Text"
      />
 

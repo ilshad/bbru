@@ -9,9 +9,9 @@
      name="authentication"
      />
   <adapter
-     factory=".config.UserConfigurator"
+     factory=".config.CreateUserConfigurator"
      for="bbru.ISite"
-     name="User"
+     name="Create User"
      />
 
 </configure>
