@@ -2,7 +2,7 @@
 Начальная страница
 ==================
 
-:doctest:
+#:doctest:
 :functional-zcml-layer: ftesting.zcml
 
 Тестирование начальной страницы (модуль bbru.frontpage) выделено в
@@ -33,3 +33,7 @@
 
   >>> 'It works!' in browser.contents
   True
+
+  >>> print 34
+  35
+

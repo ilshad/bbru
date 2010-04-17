@@ -1,0 +1,18 @@
+<configure
+   xmlns="http://namespaces.zope.org/mail"
+   i18n_domain="bbru">
+
+  <smtpMailer
+     name="bbru-smtp"
+     hostname="localhost"
+     port="25"
+     />
+
+  <queuedDelivery
+     name="bbru-delivery"
+     permission="zope.SendMail"
+     queuePath="/tmp/bbru-mail-queue"
+     mailer="bbru-smtp"
+     />
+
+</configure>

@@ -4,5 +4,10 @@
 
   <include package="bbru" />
   <include file="securitypolicy.zcml" />
-  
+
+  <!--utility
+     factory=".delivery.TestMailDelivery"
+     name="bbru-delivery"
+     /-->
+
 </configure>

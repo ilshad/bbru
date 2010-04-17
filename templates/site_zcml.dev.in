@@ -2,6 +2,7 @@
 
   <include package="bbru" />
   <include package="bbru" file="securitypolicy.zcml" />
+  <include package="bbru.mail" file="sandbox.zcml" />
 
   <principal
      id="zope.manager"
