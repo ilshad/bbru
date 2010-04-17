@@ -55,6 +55,7 @@ setup(name='bbru',
                         'zope.app.zcmlfiles',
 
                         'zope.intid',
+                        'zope.sendmail',
 
                         'ice.control',
                         ],

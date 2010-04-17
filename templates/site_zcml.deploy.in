@@ -2,6 +2,15 @@
 
   <include package="bbru" />
   <include package="bbru" file="securitypolicy.zcml" />
+
+  <configure xmlns="http://namespaces.zope.org/mail">
+    <smtpMailer
+       name="smtp"
+       hostname="localhost"
+       port="25"
+       />
+  </configure>
+
   <include package="bbru.mail" />
 
   <!--

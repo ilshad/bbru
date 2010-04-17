@@ -5,9 +5,20 @@
   <include package="bbru" />
   <include file="securitypolicy.zcml" />
 
-  <!--utility
-     factory=".delivery.TestMailDelivery"
-     name="bbru-delivery"
-     /-->
+  <utility
+     factory="bbru.tests.mail.FakeMailDelivery"
+     name="bbru.mailer"
+     />
+
+  <principal
+     id="zope.mgr"
+     title="Manager"
+     login="mgr"
+     password="mgrpw"
+     />
+  <grant
+     role="zope.Manager"
+     principal="zope.mgr"
+     />
 
 </configure>

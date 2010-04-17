@@ -19,15 +19,4 @@
   <role id="zope.Manager" title="Site Manager" />
   <grantAll role="zope.Manager" />
 
-  <principal
-     id="zope.mgr"
-     title="Manager"
-     login="mgr"
-     password="mgrpw"
-     />
-  <grant
-     role="zope.Manager"
-     principal="zope.mgr"
-     />
-
 </configure>

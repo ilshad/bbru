@@ -6,6 +6,9 @@
   <include package="ice.control" />
   <include package="ice.control.repl" />
 
+  <include package="zope.sendmail" file="meta.zcml" />
+  <include package="zope.sendmail" />
+
   <include package=".localsite" />
   <include package=".skin" />
   <include package=".frontpage" />

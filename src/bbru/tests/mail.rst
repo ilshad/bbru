@@ -1,12 +1,9 @@
-==================
-Начальная страница
-==================
+==============
+Отправка почты
+==============
 
 :doctest:
 :functional-zcml-layer: ftesting.zcml
-
-Тестирование начальной страницы (модуль bbru.frontpage) выделено в
-отдельный файл, чтобы показать, как создавать подобные тестовые файлы.
 
 Подготовим тестовое окружение::
 
@@ -27,11 +24,18 @@
   >>> 'Applied: Upgrade' in browser.contents
   True
 
-Откроем начальную страницу::
+Отправка тестового сообщения::
 
-  >>> browser.open(site_url)
+  >>> from bbru.mail.send import send_mail
 
-  >>> 'It works!' in browser.contents
-  True
-
-
+  >>> send_mail("test message", "Welcome", "man@mail.ru")
+  *** Sending email from support@bluebream.ru to ['man@mail.ru']:
+  MIME-Version: 1.0
+  Content-Type: text/plain; charset="utf-8"
+  Content-Transfer-Encoding: base64
+  Subject: =?utf-8?q?Welcome?=
+  From: =?utf-8?q?support=40bluebream=2Eru?=
+  To: =?utf-8?q?man=40mail=2Eru?=
+  <BLANKLINE>
+  dGVzdCBtZXNzYWdl
+  <BLANKLINE>
