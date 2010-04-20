@@ -3,21 +3,21 @@
 
 Сборка и запуск локально:
 
--- `install-dev.rst`
--- `manage.rst`, секция `Начало работы`.
+- `install-dev.rst`
+- `manage.rst`, секция `Начало работы`.
 
 Для контрибуторов:
 
--- `codestyle.rst` - общие соглашения по коду
--- `development.rst` - методологическая составляющая
+- `codestyle.rst` - общие соглашения по коду
+- `development.rst` - методологическая составляющая
 
 Развертывание на промышленном сервере с использованием ZEO-кластера:
 
--- `zeo-server.rst`
--- `deployment.rst`
+- `zeo-server.rst`
+- `deployment.rst`
 
 Системным администраторам, не знакомым с zc.buildout, рекомендуется сначала
-прочитать документ install-dev.rst, секции "Полезные команды опции bin/buildout"
+прочитать документ install-dev.rst, секции "Полезные команды bin/buildout"
 и "Distribute".
 
 
