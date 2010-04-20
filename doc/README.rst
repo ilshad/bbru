@@ -16,6 +16,10 @@
 -- `zeo-server.rst`
 -- `deployment.rst`
 
+Системным администраторам, не знакомым с zc.buildout, рекомендуется сначала
+прочитать документ install-dev.rst, секции "Полезные команды опции bin/buildout"
+и "Distribute".
+
 
 ВАЖНО
 -----
