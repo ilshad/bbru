@@ -1,1 +1,80 @@
-It works!
+<div id="poster-1" class="rounded-box">
+  <b class="r5"></b><b class="r3"></b><b class="r2"></b>
+  <b class="r1"></b><b class="r1"></b>
+  <div class="inner-box">
+    
+    <p class="big">Добро пожаловать на сервисы для
+    <a href="http://bluebream.zope.org">BlueBream</a> разработчиков.</p>
+    <br />
+    <p>Сайт находится на стадии выдумывания того, что здесь должно быть.
+      Разработка ведется открыто. Опытные и начинающие программисты на
+      платформе BlueBream/ZTK, менеджеры, дизайнеры, клиенты -
+      присоединяйтесь и высказывайте свои идеи.</p>
+    <br />
+    <p>Связаться с нами можно по адресу
+      <a href="mailto:team@bluebream.ru">team@bluebream.ru</a></p>
+
+  </div>
+  <b class="r1"></b><b class="r1"></b>
+  <b class="r2"></b><b class="r3"></b><b class="r5"></b>
+</div>
+
+<div id="poster-2" class="rounded-box">
+  <b class="r5"></b><b class="r3"></b><b class="r2"></b>
+  <b class="r1"></b><b class="r1"></b>
+  <div class="inner-box">
+
+    Публичные репозитории:
+    <ul>
+      <li>
+	<a href="http://github.com/astoon/bbru">
+	  http://github.com/astoon/bbru
+	</a>
+      </li>
+      <li>
+	<a href="http://github.com/aganzha/bbru">
+	  http://github.com/aganzha/bbru
+	</a>
+      </li>
+    </ul>
+    
+  </div>
+  <b class="r1"></b><b class="r1"></b>
+  <b class="r2"></b><b class="r3"></b><b class="r5"></b>
+</div>
+
+<div id="poster-3">
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: 'bluebream OR #bbru',
+  interval: 6000,
+  /*title: 'Поиск для',*/
+  /*subject: 'BlueBream',*/
+  width: 250,
+  height: 220,
+  theme: {
+    shell: {
+      background: '#cccccc',
+      color: '#555555'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#444444',
+      links: '#1985b5'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: true,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: true,
+    behavior: 'default'
+  }
+}).render().start();
+</script>
+</div>

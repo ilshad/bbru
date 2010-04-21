@@ -19,12 +19,12 @@
     </script>
   </head>
   <body>
-    <h1 id="header">
+    <!--h1 id="header">
       <a tal:attributes="href string:${site/@@absolute_url}" id="site-title">
 	<img src="resources/img/bluebream_logo.png"
 	     tal:attributes="src string:${site/@@absolute_url}/@@/img/bluebream_logo.png" />
       </a>
-    </h1>
+    </h1-->
     <div id="main" tal:content="structure provider:pagelet">It works!</div>
   </body>
 </html>

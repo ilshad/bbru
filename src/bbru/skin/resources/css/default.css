@@ -204,3 +204,60 @@ input[type=checkbox] {
 #main {
     padding: 10px;
 }
+
+/**
+*
+* Posters
+*
+**/
+#poster-1 {
+    padding: 10px;
+    color: #555;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 450px;
+}
+#poster-2 {
+    padding: 10px;
+    color: #555;
+    position: absolute;
+    top: 320px;
+    left: 300px;
+    width: 450px;
+}
+#poster-3 {
+    position: absolute;
+    top: 25px;
+    left: 550px;
+}
+
+/* round corners */
+.r1, .r2, .r3, .r4, .r5, .r6, .r7, .r8, .r9, .r10 {
+    display: block;
+    height: 1px;
+    overflow: hidden;
+    font-size:1px;
+}
+.r10 { margin: 0 10px; }
+.r9 { margin: 0 9px; }
+.r8 { margin: 0 8px; }
+.r7 { margin: 0 7px; }
+.r6 { margin: 0 6px; }
+.r5 { margin: 0 5px; }
+.r4 { margin: 0 4px; }
+.r3 { margin: 0 3px; }
+.r2 { margin: 0 2px; }
+.r1 { margin: 0 1px; }
+.inner-box { padding:1em; }
+.rounded-box .inner-box, .rounded-box  b {
+    background-color: #ccc;
+}
+.r1, .r2, .r3 {
+    overflow: hidden;
+    font-size:1px;
+}
+
+p.big {
+    font-size: 16px;
+}
