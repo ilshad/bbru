@@ -91,6 +91,12 @@ class ICreateUser(zope.interface.Interface):
         value_type=zope.schema.TextLine(
             title=u'role'),
         unique=True)
+
+    permissions = zope.schema.List(
+        title=u'Site permissions',
+        value_type=zope.schema.TextLine(
+            title=u'permission'),
+        unique=True)
     
 class CreateUserConfigurator(z3c.configurator.SchemaConfigurationPluginBase):
     """Этот конфигуратор нужен для того, чтобы:
@@ -120,7 +126,8 @@ class CreateUserConfigurator(z3c.configurator.SchemaConfigurationPluginBase):
             site, sm, {'login': data.get('login'),
                        'password': data.get('password'),
                        'title': data.get('title')},
-            site_roles=data.get('roles'))
+            site_roles=data.get('roles'),
+            site_permissions=data.get('permissions'))
 
     def create_user(self, site, sm, data,
                           site_roles=(), site_permissions=(),
