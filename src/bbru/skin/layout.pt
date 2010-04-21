@@ -7,8 +7,8 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <!--link rel="icon" type="image/png" href="resources/img/favicon.png"
-	tal:attributes="href string:${site/@@absolute_url}/@@/img/favicon.png" /-->
+    <link rel="icon" type="image/png" href="resources/img/favicon.ico"
+	  tal:attributes="href string:${site/@@absolute_url}/@@/img/favicon.ico" />
     <link rel="stylesheet" type="text/css" media="all" href="resources/css/default.css"
 	  tal:attributes="href string:${site/@@absolute_url}/@@/default.css" />
     <script type="text/javascript" src="resources/js/jquery.js"
