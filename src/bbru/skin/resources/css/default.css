@@ -207,32 +207,10 @@ input[type=checkbox] {
 
 /**
 *
-* Posters
+* Round corners - posters
 *
 **/
-#poster-1 {
-    padding: 10px;
-    color: #555;
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    width: 450px;
-}
-#poster-2 {
-    padding: 10px;
-    color: #555;
-    position: absolute;
-    top: 320px;
-    left: 300px;
-    width: 450px;
-}
-#poster-3 {
-    position: absolute;
-    top: 25px;
-    left: 550px;
-}
 
-/* round corners */
 .r1, .r2, .r3, .r4, .r5, .r6, .r7, .r8, .r9, .r10 {
     display: block;
     height: 1px;

@@ -1,13 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru"
       tal:define="site modules/zope/component/hooks/getSite;">
   <head>
     <title>BlueBream</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <link rel="icon" type="image/png" href="resources/img/favicon.ico"
+    <meta name="description" content="Russian BlueBream devlopoer's community portal" />
+    <meta name="keywords" content="bluebream, zope, plone, python, open source" />
+    <meta name="author" content="bluebream.ru" />
+    <meta name="robots" content="index, follow" />
+    <link rel="home" title="front page" href="/" />
+    <link rel="contact" title="contacnt details" href="mailto:dev@bluebream.ru" />
+    <link rel="shortcut icon" type="image/png" href="resources/img/favicon.ico"
 	  tal:attributes="href string:${site/@@absolute_url}/@@/img/favicon.ico" />
     <link rel="stylesheet" type="text/css" media="all" href="resources/css/default.css"
 	  tal:attributes="href string:${site/@@absolute_url}/@@/default.css" />
@@ -18,13 +22,9 @@
 	    tal:attributes="src string:${site/@@absolute_url}/@@/js/bbru.js">
     </script>
   </head>
+
   <body>
-    <!--h1 id="header">
-      <a tal:attributes="href string:${site/@@absolute_url}" id="site-title">
-	<img src="resources/img/bluebream_logo.png"
-	     tal:attributes="src string:${site/@@absolute_url}/@@/img/bluebream_logo.png" />
-      </a>
-    </h1-->
     <div id="main" tal:content="structure provider:pagelet">It works!</div>
   </body>
+
 </html>

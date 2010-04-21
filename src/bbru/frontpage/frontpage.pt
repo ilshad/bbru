@@ -1,46 +1,53 @@
-<div id="poster-1"
-     tal:define="html_text
-                 string: <p class='big'> Добро пожаловать на сервисы для
-		 <a href='http://bluebream.zope.org'>BlueBream</a> разработчиков.</p>
-                 <br />
-                 <p>Сайт находится на стадии выдумывания того, что здесь должно быть.
-                 Разработка ведется открыто. Опытные и начинающие программисты на
-                 платформе BlueBream/ZTK, системные администраторы, консультанты -
-                 присоединяйтесь и высказывайте свои идеи.</p>
-                 <br />
-                 <p>Связаться с нами можно по адресу
-                 <a href='mailto:team@bluebream.ru'>team@bluebream.ru</a></p>"
-     tal:content="structure provider:bbru.poster" />
+<div style="padding:10px; color:#555; position:absolute;
+	    top:50px; left:50px; width: 450px;">
+  <metal:block use-macro="macro:poster">
+    <metal:block fill-slot="body">
+      <p class="big">Добро пожаловать на сервисы для
+	<a href="http://bluebream.zope.org">BlueBream</a> разработчиков.</p>
+      <br />
+      <p>Сайт находится в стадии выдумывания того, что же здесь должно быть.
+        Разработка ведется открыто. Программисты, использующие платформу
+	BlueBream/ZTK, системные администраторы и консультанты -
+	присоединяйтесь и выдвигайте свои идеи.</p>
+      <br />
+      <p>Связаться с нами можно по почте:
+        <a href="mailto:team@bluebream.ru">team@bluebream.ru</a>
+	Открытое собрание проходит на IRC freenode, канал
+	<a href="http://webchat.freenode.net/?randomnick=1&channels=bbru">#bbru</a>,
+	каждую среду, в 16.00 Мск., длительность - 30 минут.</p>
+    </metal:block>
+  </metal:block>
+</div>
 
-<div id="poster-2"
-     tal:define="html_text
-		 string: Публичные репозитории:
-		 <ul>
-		   <li>
-		     <a href='http://github.com/astoon/bbru'>
-		       http://github.com/astoon/bbru
-		     </a>
-		   </li>
-		   <li>
-		     <a href=http://github.com/aganzha/bbru'>
-		       http://github.com/aganzha/bbru
-		     </a>
-		   </li>
-		 </ul>"
-     tal:content="structure provider:bbru.poster" />
+<div style="padding:10px; color:#555;  position:absolute;
+	    top:370px; left:300px; width: 450px;">
+  <metal:block use-macro="macro:poster">
+    <metal:block fill-slot="body">
+      Публичные репозитории:
+      <ul>
+	<li>
+	  <a href="http://github.com/astoon/bbru">http://github.com/astoon/bbru</a>
+	</li>
+	<li>
+	  <a href="http://github.com/aganzha/bbru">http://github.com/aganzha/bbru</a>
+	</li>
+      </ul>
+    </metal:block>
+  </metal:block>
+</div>
 
-<div id="poster-3">
+<div style=" position:absolute; top:25px; left:550px;">
 <script src="http://widgets.twimg.com/j/2/widget.js"></script>
 <script>
 new TWTR.Widget({
   version: 2,
   type: 'search',
-  search: 'bluebream OR #bbru',
+  search: '#bbru',
   interval: 6000,
   /*title: 'Поиск для',*/
-  /*subject: 'BlueBream',*/
+  subject: '#bbru',
   width: 250,
-  height: 220,
+  height: 260,
   theme: {
     shell: {
       background: '#cccccc',

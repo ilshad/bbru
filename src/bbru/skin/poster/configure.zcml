@@ -1,19 +1,11 @@
 <configure
-   xmlns="http://namespaces.zope.org/zope"
+   xmlns="http://namespaces.zope.org/z3c"
    i18n_domain="bbru">
 
-  <interface
-     interface=".poster.IPoster"
-     type="zope.contentprovider.interfaces.ITALNamespaceData"
-     />
-
-  <adapter
-     name="bbru.poster"
-     for="zope.interface.Interface
-	  z3c.layer.pagelet.IPageletBrowserLayer
-	  z3c.pagelet.interfaces.IPagelet"
-     provides="zope.contentprovider.interfaces.IContentProvider"
-     factory=".poster.Poster"
+  <macro
+     name="poster"
+     template="poster.pt"
+     layer="..interfaces.ILayer"
      />
   
 </configure>

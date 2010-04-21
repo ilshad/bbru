@@ -7,6 +7,7 @@ etc/
 parts/
 src/bbru.egg-info/
 var/blob
+var/blob.old
 var/filestorage/Data.*
 var/log/access.log
 var/log/z3.log
