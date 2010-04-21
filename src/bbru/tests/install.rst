@@ -36,9 +36,6 @@
   >>> 'http://localhost/@@/js/bbru.js' in browser.contents
   True
 
-  >>> 'http://localhost/@@/img/bluebream_logo.png' in browser.contents
-  True
-
 и что эти ресурсы доступны::
 
   >>> browser.open(root_url + '/@@/default.css')

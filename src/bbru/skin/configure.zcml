@@ -16,6 +16,7 @@
 
   <browser:defaultView layer=".interfaces.ILayer" name="index.html" />
 
+  <include package=".poster" />
   <include package=".resources" />
 
 </configure>

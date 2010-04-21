@@ -31,7 +31,5 @@
 
   >>> browser.open(site_url)
 
-  >>> 'It works!' in browser.contents
-  True
-
-
+  >>> browser.headers['status']
+  '200 Ok'

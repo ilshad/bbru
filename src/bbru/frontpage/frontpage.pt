@@ -1,47 +1,33 @@
-<div id="poster-1" class="rounded-box">
-  <b class="r5"></b><b class="r3"></b><b class="r2"></b>
-  <b class="r1"></b><b class="r1"></b>
-  <div class="inner-box">
-    
-    <p class="big">Добро пожаловать на сервисы для
-    <a href="http://bluebream.zope.org">BlueBream</a> разработчиков.</p>
-    <br />
-    <p>Сайт находится на стадии выдумывания того, что здесь должно быть.
-      Разработка ведется открыто. Опытные и начинающие программисты на
-      платформе BlueBream/ZTK, менеджеры, дизайнеры, клиенты -
-      присоединяйтесь и высказывайте свои идеи.</p>
-    <br />
-    <p>Связаться с нами можно по адресу
-      <a href="mailto:team@bluebream.ru">team@bluebream.ru</a></p>
+<div id="poster-1"
+     tal:define="html_text
+                 string: <p class='big'> Добро пожаловать на сервисы для
+		 <a href='http://bluebream.zope.org'>BlueBream</a> разработчиков.</p>
+                 <br />
+                 <p>Сайт находится на стадии выдумывания того, что здесь должно быть.
+                 Разработка ведется открыто. Опытные и начинающие программисты на
+                 платформе BlueBream/ZTK, системные администраторы, консультанты -
+                 присоединяйтесь и высказывайте свои идеи.</p>
+                 <br />
+                 <p>Связаться с нами можно по адресу
+                 <a href='mailto:team@bluebream.ru'>team@bluebream.ru</a></p>"
+     tal:content="structure provider:bbru.poster" />
 
-  </div>
-  <b class="r1"></b><b class="r1"></b>
-  <b class="r2"></b><b class="r3"></b><b class="r5"></b>
-</div>
-
-<div id="poster-2" class="rounded-box">
-  <b class="r5"></b><b class="r3"></b><b class="r2"></b>
-  <b class="r1"></b><b class="r1"></b>
-  <div class="inner-box">
-
-    Публичные репозитории:
-    <ul>
-      <li>
-	<a href="http://github.com/astoon/bbru">
-	  http://github.com/astoon/bbru
-	</a>
-      </li>
-      <li>
-	<a href="http://github.com/aganzha/bbru">
-	  http://github.com/aganzha/bbru
-	</a>
-      </li>
-    </ul>
-    
-  </div>
-  <b class="r1"></b><b class="r1"></b>
-  <b class="r2"></b><b class="r3"></b><b class="r5"></b>
-</div>
+<div id="poster-2"
+     tal:define="html_text
+		 string: Публичные репозитории:
+		 <ul>
+		   <li>
+		     <a href='http://github.com/astoon/bbru'>
+		       http://github.com/astoon/bbru
+		     </a>
+		   </li>
+		   <li>
+		     <a href=http://github.com/aganzha/bbru'>
+		       http://github.com/aganzha/bbru
+		     </a>
+		   </li>
+		 </ul>"
+     tal:content="structure provider:bbru.poster" />
 
 <div id="poster-3">
 <script src="http://widgets.twimg.com/j/2/widget.js"></script>

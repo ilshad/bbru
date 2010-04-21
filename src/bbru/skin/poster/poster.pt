@@ -1,0 +1,7 @@
+<div class="rounded-box">
+  <b class="r5"></b><b class="r3"></b><b class="r2"></b>
+  <b class="r1"></b><b class="r1"></b>
+  <div class="inner-box" tal:content="structure view/html_text" />
+  <b class="r1"></b><b class="r1"></b>
+  <b class="r2"></b><b class="r3"></b><b class="r5"></b>
+</div>
