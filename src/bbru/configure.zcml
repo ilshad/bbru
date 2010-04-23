@@ -14,5 +14,6 @@
   <include package=".frontpage" />
   <include package=".rootpage" />
   <include package=".authentication" />
+  <include package=".generations" />
 
 </configure>

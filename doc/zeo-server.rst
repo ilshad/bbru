@@ -3,17 +3,16 @@
 =========================
 
 Создать и развернуть ZEO-сервер очень просто. Есть образец buildout.cfg файла,
-который можно просто скопировать: http://gist.github.com/366185 :
+который можно просто скопировать: http://gist.github.com/366185 ::
 
   $ mkdir zeoserver
-
   $ cd zeoserver
 
-Вместо копирования можно взять wget'ом, указав его хэш:
+Вместо копирования можно взять wget'ом, указав его хэш::
 
   $ wget http://gist.github.com/raw/366185/1e8011c63b3ba2d617edf0b98be5ac3f7eec8392/zeoserver-buildout.cfg -O buildout.cfg
 
-Положить сюда bootstrap.py:
+Положить сюда bootstrap.py::
 
   $ wget http://python-distribute.org/bootstrap.py
 
@@ -33,18 +32,15 @@
 4. Есть и множество других опций, смотреть в документации к ZEO и zc.zodbrecipes.
 
 
-Собрать и запустить сервер:
+Собрать и запустить сервер::
 
   $ python bootstrap.py
-
   $ bin/buildout
-
   $ bin/server start
 
-Другие опции команды bin/server:
+Другие опции команды bin/server::
 
   $ bin/server stop
-
   $ bin/server status
 
 Также в директории bin/ множество других скриптов для администрирования

@@ -4,7 +4,7 @@ site-definition ${config:site_zcml}
   <zeoclient>
     server localhost:8100
     storage bbru
-    cache-size 128MB
+    cache-size 20MB
     # Uncomment to have a persistent disk cache
     #client zeo1
   </zeoclient>

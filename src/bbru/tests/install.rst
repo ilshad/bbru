@@ -14,6 +14,7 @@
   >>> root = getRootFolder()
 
   >>> root_url = 'http://localhost'
+  >>> admin_skin = root_url + '/++skin++control'
   >>> browser = Browser()
 
 Откроем страницу на корневом объекте (bbru.rootpage)::
@@ -22,8 +23,8 @@
   >>> browser.headers['status']
   '200 Ok'
 
-  >>> browser.getLink(text=u'Admin UI').url
-  'http://localhost/++skin++control'
+  >>> browser.getLink(text=u'Admin UI').url == admin_skin
+  True
 
 Удостоверимся, страница содержит правильные ссылки на ресурсы скина::
 
@@ -157,3 +158,14 @@ bbru.authentication.config.CreateUserConfigurator
 
   >>> print user.title
   Ильшад Хабибуллин
+
+Проверка страницы управления генерациями
+========================================
+
+Убедимся, что bbru есть в списке генераций и что с ним все в порядке::
+
+  >>> browser.open(admin_skin +'/++control++/generations.html')
+  >>> browser.getLink(text='bbru').click()
+
+  >>> browser.headers['status']
+  '200 Ok'

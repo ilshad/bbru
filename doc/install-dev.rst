@@ -6,16 +6,16 @@
 этот документ до конца, а затем вернуться к сборке и установке. Для того,
 что установить сайт, нужно:
 
-1. Форкнуть репозиторий git://github.com/astoon/bbru
+Клонировать репозиторий::
 
-2. Сборка, запуск тестов, запуск WSGI-приложения::
+  $ git clone git://github.com/astoon/bbru.git
+  $ cd bbru
+
+Сборка, запуск тестов, запуск WSGI-приложения::
 
   $ python bootstrap.py
-
   $ bin/buildout
-
   $ bin/test
-
   $ bin/paster serve debug.ini
 
 

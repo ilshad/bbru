@@ -1,0 +1,11 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="bbru">
+
+  <utility
+      name="bbru"
+      provides="zope.app.generations.interfaces.ISchemaManager"
+      component=".schemaManager"
+      />
+
+</configure>

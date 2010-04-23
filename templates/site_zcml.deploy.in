@@ -6,8 +6,10 @@
   <configure xmlns="http://namespaces.zope.org/mail">
     <smtpMailer
        name="smtp"
-       hostname="localhost"
-       port="25"
+       hostname="smtp.gmail.com"
+       port="587"
+       username="support@bluebream.ru"
+       password=""
        />
   </configure>
 
