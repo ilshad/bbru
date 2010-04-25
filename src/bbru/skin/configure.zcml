@@ -10,11 +10,17 @@
      name="bbru"
      />
   
-  <z3c:layout layer=".interfaces.ILayer" template="layout.pt" />
+  <z3c:layout 
+     ayer=".interfaces.ILayer"
+     template="layout.pt"
+     />
+
+  <browser:defaultView
+     layer=".interfaces.ILayer"
+     name="index.html"
+     />
 
   <browser:defaultSkin name="bbru" />
-
-  <browser:defaultView layer=".interfaces.ILayer" name="index.html" />
 
   <include package=".poster" />
   <include package=".resources" />
