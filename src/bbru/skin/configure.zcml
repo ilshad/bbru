@@ -11,7 +11,7 @@
      />
   
   <z3c:layout 
-     ayer=".interfaces.ILayer"
+     layer=".interfaces.ILayer"
      template="layout.pt"
      />
 
