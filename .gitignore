@@ -3,7 +3,6 @@ build/
 develop-eggs/
 dist/
 eggs/
-etc/
 parts/
 src/bbru.egg-info/
 var/blob
