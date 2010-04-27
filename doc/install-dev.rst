@@ -25,6 +25,10 @@
 
   $ bin/paster shell debug.ini
 
+Запуск Python интерпретатора с доступными импортами проекта::
+
+  $ bin/py
+
 Другие варианты см. `modes.rst`
 
 
