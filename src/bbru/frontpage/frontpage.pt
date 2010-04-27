@@ -13,7 +13,7 @@
       <p>Связаться с нами можно по почте:
         <a href="mailto:team@bluebream.ru">team@bluebream.ru</a>
 	Открытое собрание проходит на IRC freenode, канал
-	<a href="http://webchat.freenode.net/?randomnick=1&channels=bbru">#bbru</a>,
+	<a href="http://webchat.freenode.net/?channels=bbru">#bbru</a>,
 	каждую среду, в 16.00 Мск., длительность - 30 минут.</p>
     </metal:block>
   </metal:block>
