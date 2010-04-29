@@ -1,0 +1,13 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="bbru">
+
+  <adapter
+     factory=".config.AnswersConfigurator"
+     for="bbru.ISite"
+     name="answers"
+     />
+
+  <include package=".browser" />
+
+</configure>

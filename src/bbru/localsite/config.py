@@ -30,7 +30,7 @@ class UpgradeConfigurator(ConfigurationPluginBase):
     """Дальнейшие манипуляции по заселению локальными компонентами,
     апргейд базы данных при обновлениях кода и т.д. """
 
-    dependencies = ('_initialize', 'authentication')
+    dependencies = ('_initialize', 'authentication', 'answers')
 
     def __call__(self, *args):
         site = getObject(self.context)

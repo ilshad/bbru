@@ -1,0 +1,5 @@
+<configure
+   xmlns="http://namespaces.zope.org/z3c"
+   i18n_domain="bbru">
+
+</configure>
