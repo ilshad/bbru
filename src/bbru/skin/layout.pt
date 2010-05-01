@@ -1,12 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru"
-      tal:define="site modules/zope/component/hooks/getSite;">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html tal:define="site modules/zope/component/hooks/getSite;">
   <head>
     <title>BlueBream</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <meta name="description" content="Russian BlueBream developer's community portal" />
-    <meta name="keywords" content="bluebream, zope, plone, python, open source, programming" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="Российский портал BlueBream разработчиков" />
+    <meta name="keywords" content="bluebream, zope, plone, python, open source, программирование" />
     <meta name="author" content="bluebream.ru community" />
     <meta name="robots" content="index, follow" />
     <link rel="home" title="front page" href="/" />
