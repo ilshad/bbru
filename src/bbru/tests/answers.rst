@@ -8,7 +8,6 @@ bbru.answers - Управление Вопросами и Ответами
 Подготовим тестовое окружение::
 
   >>> from zope.testbrowser.testing import Browser
-  >>> root = getRootFolder()
   >>> browser = Browser()
   >>> browser.addHeader('Authorization','Basic mgr:mgrpw')
   >>> browser.handleErrors = False
@@ -22,4 +21,24 @@ bbru.answers - Управление Вопросами и Ответами
   >>> browser.getControl(name='form.buttons.add').click()
   >>> browser.open(root_url + '/site/@@getControlDetailsConfigurators?form.pluginNames=Upgrade&form.actions.apply=True')
   >>> 'Applied: Upgrade' in browser.contents
+  True
+
+  >>> root = getRootFolder()
+  >>> site = root[u'site']
+  >>> sm = site.getSiteManager()
+
+Локальная утилита-контейнер, обеспечивающее персистентную часть
+приложения "Вопросы и Ответы" (иначе говоря, обеспечивающая базу
+данных вопросов и ответов), устанавливается не в сайт-менеджер,
+а, для удобства, в корень самого сайта, чтобы треверсить по имени.
+
+В сайт-менеджере она только регистрируется по интерфейсу как утилита.
+
+В действительности, можно было бы и положить в сайт-менеджер, а
+в во всех видах вызывать по интерфейсу из реестра. Тем не менее,
+здесь сделано так - и это вполне естесственно::
+
+  >>> from bbru.answers.interfaces import IAnswers
+
+  >>> sm.getUtility(IAnswers) is site[u'answers']
   True

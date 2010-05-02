@@ -2,11 +2,89 @@
    xmlns="http://namespaces.zope.org/zope"
    i18n_domain="bbru">
 
+  <!-- Запуск конфигуратора -->
   <adapter
      factory=".config.AnswersConfigurator"
      for="bbru.ISite"
      name="answers"
      />
+
+  <!-- Специальные разрешения -->
+  <permission
+     id="bbru.Question"
+     title="Может задавать вопросы"
+     />
+  <permission
+     id="bbru.Answer"
+     title="Может отвечать"
+     />
+
+  <!-- Читать контейнер могут все.
+       Писать - те, кто задает вопросы.
+       Удаления вопросов нужны менеджерские права.
+    -->
+  <class class=".Answers">
+    <implements
+       interface="zope.annotation.IAttributeAnnotatable"
+       />
+    <allow
+       interface="zope.container.interfaces.IReadContainer"
+       />
+    <require
+       attributes="__setitem__"
+       permission="bbru.Question"
+       />
+    <require
+       attributes="__delitem__"
+       permission="zope.ManageContent"
+       />
+  </class>
+
+  <!-- Читать контейнер (ответы) и текст вопроса могут все.
+       Редактировать текст - тот, кто задает вопрос.
+       Добавлять в контейнер - те, кто отвечает.
+       Для удаления ответов необходимы менеджерские права.
+    -->
+  <class class=".Question">
+    <implements
+       interface="zope.annotation.IAttributeAnnotatable"
+       />
+    <require
+       interface=".interfaces.IQuestion"
+       permission="zope.View"
+       />
+    <require
+       set_schema=".interfaces.IQuestion"
+       permission="bbru.Question"
+       />
+    <allow
+       interface="zope.container.interfaces.IReadContainer"
+       />
+    <require
+       attributes="__setitem__"
+       permission="bbru.Answer"
+       />
+    <require
+       attributes="__delitem__"
+       permission="zope.ManageContent"
+       />
+  </class>
+
+  <!-- Читать текст ответа могут все.
+       Редактировать - тот, кто задает вопрос. -->
+  <class class=".QuestionAnswer">
+    <implements
+       interface="zope.annotation.IAttributeAnnotatable"
+       />
+    <require
+       interface=".interfaces.IQuestionAnswer"
+       permission="zope.View"
+       />
+    <require
+       set_schema=".interfaces.IQuestionAnswer"
+       permission="bbru.Answer"
+       />
+  </class>
 
   <include package=".browser" />
 
