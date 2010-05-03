@@ -19,9 +19,7 @@
      title="Может отвечать"
      />
 
-  <!-- Читать контейнер могут все.
-       Писать - те, кто задает вопросы.
-       Для удаления вопросов нужны менеджерские права. -->
+  <!-- Контейнер с вопросами -->
   <class class=".Answers">
     <implements
        interface="zope.annotation.IAttributeAnnotatable"
@@ -39,10 +37,7 @@
        />
   </class>
 
-  <!-- Читать контейнер (ответы) и текст вопроса могут все.
-       Редактировать текст - тот, кто задает вопрос.
-       Добавлять в контейнер - те, кто отвечает.
-       Для удаления ответов необходимы менеджерские права. -->
+  <!-- Вопрос, он же - конейнер с ответами -->
   <class class=".Question">
     <implements
        interface="zope.annotation.IAttributeAnnotatable"
@@ -68,8 +63,7 @@
        />
   </class>
 
-  <!-- Читать текст ответа могут все.
-       Редактировать - тот, кто задает вопрос. -->
+  <!-- Ответ -->
   <class class=".QuestionAnswer">
     <implements
        interface="zope.annotation.IAttributeAnnotatable"
@@ -84,7 +78,7 @@
        />
   </class>
 
-  <!-- выбрать имя в контейнере -->
+  <!-- Выбор имени при добавлении в контейнер -->
   <adapter
      for=".interfaces.IAnswers"
      provides="zope.container.interfaces.INameChooser"

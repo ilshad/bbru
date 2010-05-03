@@ -18,12 +18,12 @@
   <pagelet
      for="..interfaces.IAnswers"
      name="index.html"
-     class=".answers.Pagelet"
+     class=".listing.Pagelet"
      permission="zope.View"
      />
   <template
-     for=".answers.Pagelet"
-     template="answers.pt"
+     for=".listing.Pagelet"
+     template="listing.pt"
      />
 
   <!-- просмотр вопроса и ответов к нему -->
