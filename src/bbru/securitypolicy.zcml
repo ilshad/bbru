@@ -40,4 +40,9 @@
   <role id="zope.Manager" title="Site Manager" />
   <grantAll role="zope.Manager" />
 
+  <grant
+     permission="zope.app.dublincore.view"
+     role="zope.Anonymous"
+     />
+
 </configure>

@@ -1,0 +1,95 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="bbru">
+
+  <!-- Запуск конфигуратора -->
+  <adapter
+     factory=".config.AnswersConfigurator"
+     for="bbru.ISite"
+     name="answers"
+     />
+
+  <!-- Специальные разрешения -->
+  <permission
+     id="bbru.answers.Question"
+     title="Может задавать вопросы"
+     />
+  <permission
+     id="bbru.answers.Answer"
+     title="Может отвечать"
+     />
+
+  <!-- Контейнер с вопросами -->
+  <class class=".Answers">
+    <implements
+       interface="zope.annotation.IAttributeAnnotatable"
+       />
+    <allow
+       interface="zope.container.interfaces.IReadContainer"
+       />
+    <require
+       attributes="__setitem__"
+       permission="bbru.answers.Question"
+       />
+    <require
+       attributes="__delitem__"
+       permission="zope.ManageContent"
+       />
+  </class>
+
+  <!-- Вопрос, он же - конейнер с ответами -->
+  <class class=".Question">
+    <implements
+       interface="zope.annotation.IAttributeAnnotatable"
+       />
+    <require
+       interface=".interfaces.IQuestion"
+       permission="zope.View"
+       />
+    <require
+       set_schema=".interfaces.IQuestion"
+       permission="bbru.answers.Question"
+       />
+    <allow
+       interface="zope.container.interfaces.IReadContainer"
+       />
+    <require
+       attributes="__setitem__"
+       permission="bbru.answers.Answer"
+       />
+    <require
+       attributes="__delitem__"
+       permission="zope.ManageContent"
+       />
+  </class>
+
+  <!-- Ответ -->
+  <class class=".QuestionAnswer">
+    <implements
+       interface="zope.annotation.IAttributeAnnotatable"
+       />
+    <require
+       interface=".interfaces.IQuestionAnswer"
+       permission="zope.View"
+       />
+    <require
+       set_schema=".interfaces.IQuestionAnswer"
+       permission="bbru.answers.Answer"
+       />
+  </class>
+
+  <!-- Выбор имени при добавлении в контейнер -->
+  <adapter
+     for=".interfaces.IAnswers"
+     provides="zope.container.interfaces.INameChooser"
+     factory=".namechooser.IntegerNameChooser"
+     />
+  <adapter
+     for=".interfaces.IQuestion"
+     provides="zope.container.interfaces.INameChooser"
+     factory=".namechooser.IntegerNameChooser"
+     />
+
+  <include package=".browser" />
+
+</configure>

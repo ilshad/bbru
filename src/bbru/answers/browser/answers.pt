@@ -1,0 +1,20 @@
+<tal:block repeat="answer options/answers">
+  <div class="answer-wrapper">
+    <table class="answer">
+      <tr class="metadata">
+	<td>
+	  <a class="user" tal:content="answer/user" />
+	  <span class="date" tal:content="answer/created" />
+	</td>
+      </tr>
+      <tr>
+	<td class="content" tal:content="structure answer/body" />
+      </tr>
+      <tr class="actions">
+	<td>
+	  <a class="action">Этот ответ решает мою задачу</a>
+	</td>
+      </tr>
+    </table>
+  </div>
+</tal:block>

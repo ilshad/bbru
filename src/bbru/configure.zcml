@@ -15,5 +15,6 @@
   <include package=".rootpage" />
   <include package=".authentication" />
   <include package=".generations" />
+  <include package=".answers" />
 
 </configure>
