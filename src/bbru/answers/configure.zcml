@@ -11,18 +11,17 @@
 
   <!-- Специальные разрешения -->
   <permission
-     id="bbru.Question"
+     id="bbru.answers.Question"
      title="Может задавать вопросы"
      />
   <permission
-     id="bbru.Answer"
+     id="bbru.answers.Answer"
      title="Может отвечать"
      />
 
   <!-- Читать контейнер могут все.
        Писать - те, кто задает вопросы.
-       Удаления вопросов нужны менеджерские права.
-    -->
+       Для удаления вопросов нужны менеджерские права. -->
   <class class=".Answers">
     <implements
        interface="zope.annotation.IAttributeAnnotatable"
@@ -32,7 +31,7 @@
        />
     <require
        attributes="__setitem__"
-       permission="bbru.Question"
+       permission="bbru.answers.Question"
        />
     <require
        attributes="__delitem__"
@@ -43,8 +42,7 @@
   <!-- Читать контейнер (ответы) и текст вопроса могут все.
        Редактировать текст - тот, кто задает вопрос.
        Добавлять в контейнер - те, кто отвечает.
-       Для удаления ответов необходимы менеджерские права.
-    -->
+       Для удаления ответов необходимы менеджерские права. -->
   <class class=".Question">
     <implements
        interface="zope.annotation.IAttributeAnnotatable"
@@ -55,14 +53,14 @@
        />
     <require
        set_schema=".interfaces.IQuestion"
-       permission="bbru.Question"
+       permission="bbru.answers.Question"
        />
     <allow
        interface="zope.container.interfaces.IReadContainer"
        />
     <require
        attributes="__setitem__"
-       permission="bbru.Answer"
+       permission="bbru.answers.Answer"
        />
     <require
        attributes="__delitem__"
@@ -82,9 +80,16 @@
        />
     <require
        set_schema=".interfaces.IQuestionAnswer"
-       permission="bbru.Answer"
+       permission="bbru.answers.Answer"
        />
   </class>
+
+  <!-- выбрать имя в контейнере -->
+  <adapter
+     for=".interfaces.IAnswers"
+     provides="zope.container.interfaces.INameChooser"
+     factory=".IntegerNameChooser"
+     />
 
   <include package=".browser" />
 

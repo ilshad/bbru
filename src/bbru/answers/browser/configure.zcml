@@ -1,5 +1,41 @@
 <configure
    xmlns="http://namespaces.zope.org/z3c"
    i18n_domain="bbru">
+  
+  <!-- задать вопрос -->
+  <pagelet
+     for="..interfaces.IAnswers"
+     name="ask"
+     class=".ask.Pagelet"
+     permission="bbru.answers.Question"
+     />
+  <template
+     for=".ask.Pagelet"
+     template="ask.pt"
+     />
+
+  <!-- список вопросов -->
+  <pagelet
+     for="..interfaces.IAnswers"
+     name="index.html"
+     class=".answers.Pagelet"
+     permission="zope.View"
+     />
+  <template
+     for=".answers.Pagelet"
+     template="answers.pt"
+     />
+
+  <!-- просмотр вопроса и ответов к нему -->
+  <pagelet
+     for="..interfaces.IQuestion"
+     name="index.html"
+     class=".question.Pagelet"
+     permission="zope.View"
+     />
+  <template
+     for=".question.Pagelet"
+     template="question.pt"
+     />
 
 </configure>

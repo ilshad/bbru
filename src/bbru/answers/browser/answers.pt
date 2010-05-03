@@ -1,0 +1,8 @@
+<table>
+  <tr tal:repeat="item context/values">
+    <td>
+      <a tal:attributes="href item/@@absolute_url"
+	 tal:content="python: item.body[:50]" />
+    </td>
+  </tr>
+</table>

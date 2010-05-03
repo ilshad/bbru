@@ -11,6 +11,7 @@ from bbru.answers.interfaces import IAnswers
 from bbru.answers import Answers
 
 class AnswersConfigurator(ConfigurationPluginBase):
+    """Установка локальных компонент"""
 
     def __call__(self, *args):
         site = getObject(self.context)

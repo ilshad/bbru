@@ -26,4 +26,10 @@
      principal="zope.manager"
      />
 
+  <!-- исключительно для процесса разработки -->
+  <grant
+     permission="bbru.answers.Question"
+     role="zope.Anonymous"
+     />
+
 </configure>
