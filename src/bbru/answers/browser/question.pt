@@ -1,11 +1,20 @@
 <table class="question">
   <tr class="metadata">
     <td>
-      <span class="datetime" tal:content="view/created" />
-      <span class="user" tal:content="view/user" />
+      <span class="status">Решено</span>
+      <a class="user" tal:attributes="href request/URL" tal:content="view/user" />
+      <span class="date" tal:content="view/created" />
     </td>
   </tr>
   <tr class="answer-body">
-    <td tal:content="context/body" />
+    <td class="content" tal:content="structure context/body" />
   </tr>
+  <tr class="actions">
+    <td>
+      <a class="action">Ответить</a>
+      <a class="action">Редактировать</a>
+      <a class="action">Занести в FAQ</a>
+    </td>
+  </tr>
+  <tr><td id="form-place"></td></tr>
 </table>

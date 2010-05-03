@@ -13,7 +13,7 @@ class Pagelet:
 
         dc = IZopeDublinCore(self.context)
         auth = getUtility(IAuthentication)
-        
+
         principal = auth.getPrincipal(dc.creators[0])
         self.user = principal.title
 

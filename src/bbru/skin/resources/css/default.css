@@ -7,6 +7,13 @@
 
 /* zrt-replace: "../img/" tal"string:${context/@@/img}/" */
 
+/*
+*
+* FONT COLORS
+* #8ebf00 #C3CBD0 #94AAB1 #37506E #893167
+*
+**/
+
 /**
 *
 * Commmon Styles
@@ -152,7 +159,7 @@ input[type=checkbox] {
 .field {
     margin: 3px 0;
 }
-.status {
+form .status {
     color:#8ebf00;
     font-weight:bold;
 }
@@ -240,10 +247,57 @@ p.big {
     font-size: 16px;
 }
 
-.metadata {
-    color: #94AAB1;
+/*.metadata, .metadata a {
+    color: #513E36;
+}*/
+
+/*
+*
+* Special marked
+*
+**/
+.user, .date, .status, .action {
+    margin-left: 10px;
 }
 .user {
     background: transparent url(../img/user-small.png) no-repeat scroll left;
     padding-left: 20px;
+}
+.date {
+    background: transparent url(../img/date-small.png) no-repeat scroll left;
+    padding-left: 25px;
+}
+.status {
+    background: transparent url(../img/status-small.png) no-repeat scroll left;
+    padding-left: 18px;
+}
+.action {
+    background: transparent url(../img/action-small.png) no-repeat scroll left;
+    padding-left: 18px;
+}
+
+/*
+*
+* Answers
+*
+**/
+.question .metadata td {
+    text-align: right;
+}
+.question {
+    width: 100%;
+}
+.content {
+    white-space: pre-wrap;
+}
+.content pre {
+    width: 80%;
+    overflow: auto;
+    border: 1pt solid #513E36;
+    background-color: #fff;
+    padding: 5pt;
+}
+.actions td {
+    border: 1px dashed #999;
+    background-color: #eee;
 }
