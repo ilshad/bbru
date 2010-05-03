@@ -2,7 +2,7 @@
 # This code was developed for http://bluebream.ru by its community and
 # placed under Public Domain.
 
-"""Редактировать заголовок ответа.
+""" Редактировать заголовок ответа.
 """
 
 from zope.event import notify
@@ -22,4 +22,3 @@ class Ajax:
             return dc.title
 
         return self.index(title=dc.title)
-
