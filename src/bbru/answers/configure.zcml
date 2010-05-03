@@ -82,7 +82,12 @@
   <adapter
      for=".interfaces.IAnswers"
      provides="zope.container.interfaces.INameChooser"
-     factory=".IntegerNameChooser"
+     factory=".namechooser.IntegerNameChooser"
+     />
+  <adapter
+     for=".interfaces.IQuestion"
+     provides="zope.container.interfaces.INameChooser"
+     factory=".namechooser.IntegerNameChooser"
      />
 
   <include package=".browser" />

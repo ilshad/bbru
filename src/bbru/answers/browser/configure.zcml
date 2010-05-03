@@ -1,5 +1,7 @@
 <configure
    xmlns="http://namespaces.zope.org/z3c"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   xmlns:zope="http://namespaces.zope.org/zope"
    i18n_domain="bbru">
   
   <!-- задать вопрос -->
@@ -26,7 +28,7 @@
      template="listing.pt"
      />
 
-  <!-- просмотр вопроса и ответов к нему -->
+  <!-- просмотр вопроса -->
   <pagelet
      for="..interfaces.IQuestion"
      name="index.html"
@@ -37,5 +39,46 @@
      for=".question.Pagelet"
      template="question.pt"
      />
+
+  <!-- ответы на вопрос - ajax вид -->
+  <browser:page
+     for="..interfaces.IQuestion"
+     name="answers"
+     class=".answers.Ajax"
+     template="answers.pt"
+     permission="zope.View"
+     />
+
+  <!-- ответить на вопрос - ajax вид -->
+  <browser:page
+     for="..interfaces.IQuestion"
+     name="answer"
+     class=".answer.Ajax"
+     template="answer.pt"
+     permission="bbru.answers.Answer"
+     />
+
+  <!-- назначить или редактировать заголовок - ajax вид -->
+  <browser:page
+     for="..interfaces.IQuestion"
+     name="title"
+     class=".title.Ajax"
+     template="title.pt"
+     permission="zope.ManageContent"
+     />
+
+  <!-- редактировать текст вопроса - ajax-вид -->
+  <browser:page
+     for="..interfaces.IQuestion"
+     name="text"
+     class=".text.Ajax"
+     template="text.pt"
+     permission="zope.ManageContent"
+     />
+
+  <!-- ресурс-библиотека -->
+  <zope:resourceLibrary name="bbru.answers">
+    <zope:directory source="javascript" include="answers.js" />
+  </zope:resourceLibrary>
 
 </configure>

@@ -21,6 +21,7 @@
     <script type="text/javascript" src="resources/js/bbru.js"
 	    tal:attributes="src string:${site/@@absolute_url}/@@/js/bbru.js">
     </script>
+    <!-- zc.resourcelibrary -->
   </head>
 
   <body>

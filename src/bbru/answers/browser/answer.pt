@@ -1,0 +1,5 @@
+<form class="answer" method="post" action="">
+  <textarea name="body" rows="10"></textarea>
+  <input type="submit" name="ask" value="Ответить" />
+  <input type="button" name="hide" value="Не надо" class="cancel-button" />
+</form>

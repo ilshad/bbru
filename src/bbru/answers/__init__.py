@@ -4,7 +4,7 @@
 
 from persistent import Persistent
 from zope.container.btree import BTreeContainer
-from zope.container.contained import Contained, NameChooser
+from zope.container.contained import Contained
 from zope.interface import implements
 
 from interfaces import IAnswers, IQuestion, IQuestionAnswer
@@ -19,12 +19,3 @@ class Question(BTreeContainer):
 class QuestionAnswer(Contained, Persistent):
     implements(IQuestionAnswer)
     body = u''
-
-class IntegerNameChooser(NameChooser):
-
-    def chooseName(self, *args):
-        container = self.context
-        i = 1
-        while unicode(i) in container:
-            i += 1
-        return unicode(i)

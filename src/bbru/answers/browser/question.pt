@@ -1,20 +1,31 @@
+<h1 id="question-title" tal:content="view/title" />
 <table class="question">
   <tr class="metadata">
     <td>
       <span class="status">Решено</span>
-      <a class="user" tal:attributes="href request/URL" tal:content="view/user" />
+      <a class="user" tal:content="view/user" />
       <span class="date" tal:content="view/created" />
     </td>
   </tr>
-  <tr class="answer-body">
-    <td class="content" tal:content="structure context/body" />
+  <tr>
+    <td class="content" id="question-body" tal:content="structure context/body" />
   </tr>
   <tr class="actions">
     <td>
-      <a class="action">Ответить</a>
-      <a class="action">Редактировать</a>
-      <a class="action">Занести в FAQ</a>
+      <a class="action" id="do-answer">Ответить</a>
+      <a class="action" id="edit-text">Текст</a>
+      <a class="action" id="set-title">Заголовок</a>
+      <a class="action">FAQ</a>
     </td>
   </tr>
-  <tr><td id="form-place"></td></tr>
+  <tr>
+    <td id="form-place"></td>
+  </tr>
 </table>
+
+<div id="answers-place"></div>
+
+<script type="text/javascript"
+        tal:define="context_url context/@@absolute_url;"
+        tal:content="structure string:question_init('${context_url}/');">
+</script>

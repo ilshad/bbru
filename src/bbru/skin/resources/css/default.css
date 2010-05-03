@@ -10,7 +10,7 @@
 /*
 *
 * FONT COLORS
-* #8ebf00 #C3CBD0 #94AAB1 #37506E #893167
+* #8ebf00 #c3cbd0 #94aab1 #37506e #893167 #513e36
 *
 **/
 
@@ -79,11 +79,11 @@ a:hover {
 }
 h1 {
     font-family:"Arial","Helvetica",sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     margin: 3p;
     padding:0;
-    font-weight:normal;
-    color: #777;
+    font-weight: bold;
+    color: #37506e;
 }
 h2 {
     font-family:"Arial","Helvetica",sans-serif;
@@ -111,7 +111,9 @@ h4 {
     height: 130px;
     padding: 10 10 10 100;
 }
-
+.space {
+    line-height: 2em;
+}
 /**
 *
 * Forms
@@ -136,7 +138,7 @@ textarea {
     width: 99%;
 /*    height: 100px;*/
 }
-input[type=submit], input[type=reset], button {
+input[type=submit], input[type=reset], input[type=button] {
     border: 1px solid #bfbfbf;
     padding: 1px 10px;
     cursor: pointer;
@@ -145,7 +147,7 @@ input[type=submit], input[type=reset], button {
     color: #333;
     font-weight: bold;
 }
-input[type=submit]:focus, button:focus {
+input[type=submit]:focus, , input[type=button]:focus {
     border: 1px inset #bfbfbf;
 }
 input[type=checkbox] {
@@ -281,11 +283,18 @@ p.big {
 * Answers
 *
 **/
-.question .metadata td {
+.question .metadata td, .answer .metadata td {
     text-align: right;
 }
-.question {
+.question, .answer, .answer-wrapper {
     width: 100%;
+}
+.answer-wrapper {
+    border-top: 5px solid #aaa;
+    /*border-bottom: 1px solid #aaa;*/
+    border-left: 1px solid #aaa;
+    /*border-right: 1px solid #aaa;*/
+    margin-top: 20px;
 }
 .content {
     white-space: pre-wrap;
@@ -293,11 +302,13 @@ p.big {
 .content pre {
     width: 80%;
     overflow: auto;
-    border: 1pt solid #513E36;
-    background-color: #fff;
+/*    border: 1pt solid #513e36;*/
+    background-color: #333;
+    color: #fff;
     padding: 5pt;
+    font-family: mono;
 }
-.actions td {
+.question .actions td {
     border: 1px dashed #999;
     background-color: #eee;
 }

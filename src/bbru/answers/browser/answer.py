@@ -2,23 +2,27 @@
 # This code was developed for http://bluebream.ru by its community and
 # placed under Public Domain.
 
-""" Задать вопрос.
+""" Предложить ответ.
 """
 
 from zope.event import notify
 from zope.container.interfaces import INameChooser
 from zope.lifecycleevent import ObjectCreatedEvent
-from bbru.answers import Question
+from bbru.answers import QuestionAnswer
 
-class Pagelet:
+class Ajax:
 
-    def update(self):
+    def __call__(self):
         body = self.request.get('body')
 
         if body:
-            ob = Question()
+            ob = QuestionAnswer()
             ob.body = body
             notify(ObjectCreatedEvent(ob))
             name = INameChooser(self.context).chooseName(u"", ob)
             self.context[name] = ob
-            self.request.response.redirect(".")
+
+            self.request.response.setStatus(202)
+            return None
+
+        return self.index()
