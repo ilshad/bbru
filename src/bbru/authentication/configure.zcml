@@ -14,4 +14,6 @@
      name="Create User"
      />
 
+  <include package=".browser" />
+
 </configure>

@@ -1,0 +1,35 @@
+<configure
+   xmlns="http://namespaces.zope.org/z3c"
+   i18n_domain="ice.control">
+
+  <pagelet
+     name="loginForm.html"
+     for="*"
+     class=".loginform.Pagelet"
+     permission="zope.Public"
+     layer="bbru.skin.interfaces.ILayer"
+     />
+  <template
+     for=".loginform.Pagelet"
+     template="loginform.pt"
+     />
+
+  <pagelet
+     name="login.html"
+     for="*"
+     class=".login.Pagelet"
+     permission="zope.Public"
+     allowed_interface="zope.app.publisher.interfaces.http.ILogin"
+     layer="bbru.skin.interfaces.ILayer"
+     />
+
+  <pagelet
+     name="logout.html"
+     for="*"
+     class=".logout.Pagelet"
+     permission="zope.Public"
+     allowed_interface="zope.app.publisher.interfaces.http.ILogout"
+     layer="bbru.skin.interfaces.ILayer"
+     />
+
+</configure>

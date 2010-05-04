@@ -6,6 +6,8 @@
   <include package="ice.control" />
   <include package="ice.control.repl" />
 
+  <include package="z3c.layer.pagelet" />
+
   <include package="zope.sendmail" file="meta.zcml" />
   <include package="zope.sendmail" />
 

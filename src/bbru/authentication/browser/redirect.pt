@@ -1,0 +1,22 @@
+<script type="text/javascript">
+try {
+    if (window.XMLHttpRequest) {
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("GET", "@@", true, "logout", "logout");
+	xmlhttp.send("");
+	xmlhttp.abort();
+    } else if (document.execCommand) {
+	document.execCommand("ClearAuthenticationCache");
+    }
+} catch(e) { }
+</script>
+
+<h1>You are being redirected!</h1>
+
+<p style="font-size: 150%">
+  <a tal:attributes="href view/request/nextURL">
+    If you see this screen for more than 5 seconds, click here.
+  </a>
+</p>
+
+<tal:block content="python:request.response.redirect(request.get('nextURL'))" />
