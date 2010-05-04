@@ -13,13 +13,6 @@
   </tr>
   <tr class="actions">
     <td tal:content="structure provider:bbru.answer.question.actions" />
-    <!--
-      <a class="action" id="do-answer">Ответить</a>
-      <a class="action" id="edit-text">Текст</a>
-      <a class="action" id="set-title">Заголовок</a>
-      <a class="action">FAQ</a>
-    </td-->
-
   </tr>
   <tr>
     <td id="form-place"></td>

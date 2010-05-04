@@ -1,5 +1,5 @@
 <form class="text" action="" method="post">
   <textarea name="body" rows="20" tal:content="context/body" />
   <input type="submit" name="ask" value="Исправить" />
-  <input type="button" name="hide" value="Передумал" class="cancel-button" />
+  <input type="button" name="hide" value="Раздумал" class="cancel-button" />
 </form>

@@ -81,25 +81,6 @@
     <zope:directory source="javascript" include="answers.js" />
   </zope:resourceLibrary>
 
-  <!--
-      Меню действий на странице вопроса
-    -->
-
-  <browser:viewletManager
-     name="bbru.answer.question.actions"
-     view=".question.Pagelet"
-     class="z3c.menu.ready2go.manager.MenuManager"
-     template="actions.pt"
-     permission="zope.View"
-     />
-
-  <contextMenuItem
-     name="do-answer"
-     view=".question.Pagelet"
-     title="Ответить"
-     permission="zope.View"
-     />
-<!--     permission="bbru.answers.Answer"
-     /-->
+  <include file="actions.zcml" />
 
 </configure>

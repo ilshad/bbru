@@ -1,5 +1,5 @@
 <form class="title" method="post" action="">
   <input type="text" name="dctitle" size="50" tal:attributes="value options/title" />
   <input type="submit" name="ask" value="Редактировать заголовок" />
-  <input type="button" name="hide" value="Не надо" class="cancel-button" />
+  <input type="button" name="hide" value="Раздумал" class="cancel-button" />
 </form>
