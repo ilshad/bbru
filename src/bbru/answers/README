@@ -1,0 +1,12 @@
+.. -*- mode: rst -*-
+
+Временно - пока, если нужно опробовать функционал:
+
+1) Проапгрейдить сайт (конфигуратор Upgrade, см. doc/manage.rst).
+
+2) создать пользователя с правами bbru.answers.Question
+   и bbru.answers.Answer (конфигуратор Create User)
+
+3) временнная страница c листингом: http://localhost:8080/site/answers
+
+4) добавление вопроса: http://localhost:8080/site/answers/ask

@@ -9,15 +9,7 @@
      name="answers"
      />
 
-  <!-- Специальные разрешения -->
-  <permission
-     id="bbru.answers.Question"
-     title="Может задавать вопросы"
-     />
-  <permission
-     id="bbru.answers.Answer"
-     title="Может отвечать"
-     />
+  <include file="security.zcml" />
 
   <!-- Контейнер с вопросами -->
   <class class=".Answers">
@@ -33,11 +25,11 @@
        />
     <require
        attributes="__delitem__"
-       permission="zope.ManageContent"
+       permission="bbru.answers.Manage"
        />
   </class>
 
-  <!-- Вопрос, он же - конейнер с ответами -->
+  <!-- Вопрос, он же - контейнер с ответами -->
   <class class=".Question">
     <implements
        interface="zope.annotation.IAttributeAnnotatable"
@@ -59,7 +51,7 @@
        />
     <require
        attributes="__delitem__"
-       permission="zope.ManageContent"
+       permission="bbru.answers.Manage"
        />
   </class>
 

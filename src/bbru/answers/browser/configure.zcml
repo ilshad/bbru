@@ -64,7 +64,7 @@
      name="title"
      class=".title.Ajax"
      template="title.pt"
-     permission="zope.ManageContent"
+     permission="bbru.answers.Manage"
      />
 
   <!-- редактировать текст вопроса - ajax-вид -->
@@ -73,7 +73,7 @@
      name="text"
      class=".text.Ajax"
      template="text.pt"
-     permission="zope.ManageContent"
+     permission="bbru.answers.EditQuestion"
      />
 
   <!-- ресурс-библиотека -->

@@ -8,6 +8,7 @@
 from zope.event import notify
 from zope.container.interfaces import INameChooser
 from zope.lifecycleevent import ObjectCreatedEvent
+from zope.securitypolicy.interfaces import IPrincipalRoleManager
 from bbru.answers import Question
 
 class Pagelet:
@@ -21,4 +22,9 @@ class Pagelet:
             notify(ObjectCreatedEvent(ob))
             name = INameChooser(self.context).chooseName(u"", ob)
             self.context[name] = ob
+
+            # сделать создателя владельцем вопроса
+            IPrincipalRoleManager(ob).assignRoleToPrincipal(
+                'bbru.answers.Querist', self.request.principal.id)
+
             self.request.response.redirect(".")

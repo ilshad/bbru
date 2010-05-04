@@ -1,0 +1,60 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="bbru">
+
+  <!-- разрешения -->
+  <permission
+     id="bbru.answers.Question"
+     title="Спрашивать"
+     />
+  <permission
+     id="bbru.answers.Answer"
+     title="Отвечать"
+     />
+  <permission
+     id="bbru.answers.EditQuestion"
+     title="Редактировать вопрос"
+     />
+  <permission
+     id="bbru.answers.Manage"
+     title="Выполнять административные задачи над вопросами и ответами"
+     />
+
+  <!-- роли -->
+  <role
+     id="bbru.answers.Querist"
+     title="Тот, кто задал вопрос (владелец вопроса)"
+     description="Эту роль ассигнуем локально при добавлении вопроса"
+     />
+  <role
+     id="bbru.answers.Moderator"
+     title="Модератор"
+     />
+
+  <!-- общие права -->
+  <grant
+     permission="bbru.answers.Question"
+     role="bbru.Community"
+     />
+  <grant
+     permission="bbru.answers.Answer"
+     role="bbru.Community"
+     />
+
+  <!-- права модератора -->
+  <grant
+     permission="bbru.answers.EditQuestion"
+     role="bbru.answers.Moderator"
+     />
+  <grant
+     permission="bbru.answers.Manage"
+     role="bbru.answers.Moderator"
+     />
+
+  <!-- права владельца вопроса -->
+  <grant
+     permission="bbru.answers.EditQuestion"
+     role="bbru.answers.Querist"
+     />
+
+</configure>

@@ -27,7 +27,7 @@
      name="edit-text"
      view=".question.Pagelet"
      title="Текст"
-     permission="zope.ManageContent"
+     permission="bbru.answers.EditQuestion"
      weight="2"
      />
 
@@ -35,7 +35,7 @@
      name="set-title"
      view=".question.Pagelet"
      title="Заголовок"
-     permission="zope.ManageContent"
+     permission="bbru.answers.Manage"
      weight="3"
      />
 
@@ -43,7 +43,7 @@
      name="faq"
      view=".question.Pagelet"
      title="FAQ"
-     permission="zope.ManageContent"
+     permission="bbru.answers.Manage"
      weight="4"
      />
 
@@ -55,7 +55,7 @@
      permission="zope.View"
      filter_permission="bbru.answers.Answer"
      next_name=""
-     weight="5"
+     weight="1"
      />
 
 </configure>
