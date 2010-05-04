@@ -8,6 +8,7 @@
 from zope.event import notify
 from zope.container.interfaces import INameChooser
 from zope.lifecycleevent import ObjectCreatedEvent
+from zope.securitypolicy.interfaces import IPrincipalRoleManager
 from bbru.answers import QuestionAnswer
 
 class Ajax:
@@ -21,6 +22,10 @@ class Ajax:
             notify(ObjectCreatedEvent(ob))
             name = INameChooser(self.context).chooseName(u"", ob)
             self.context[name] = ob
+
+            # сделать создателя владельцем ответа
+            IPrincipalRoleManager(ob).assignRoleToPrincipal(
+                'bbru.answers.Respondent', self.request.principal.id)
 
             self.request.response.setStatus(202)
             return None

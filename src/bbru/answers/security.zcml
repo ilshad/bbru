@@ -16,6 +16,10 @@
      title="Редактировать вопрос"
      />
   <permission
+     id="bbru.answers.EditAnswer"
+     title="Редактировать ответ"
+     />
+  <permission
      id="bbru.answers.Manage"
      title="Выполнять административные задачи над вопросами и ответами"
      />
@@ -27,9 +31,14 @@
      description="Эта роль ассигнуется локально при добавлении вопроса"
      />
   <role
+     id="bbru.answers.Respondent"
+     title="Тот, кто дал ответ (владелец ответа)"
+     description="Эта роль ассигнуется локально при добавлении ответа"
+     />
+  <role
      id="bbru.answers.Moderator"
      title="Модератор"
-     description="Эту роль нужно ассигновать кому-то на уровне сайта"
+     description="Эту роль можно ассигновать кому-то на уровне сайта"
      />
 
   <!-- общие права -->
@@ -60,6 +69,12 @@
   <grant
      permission="bbru.answers.EditQuestion"
      role="bbru.answers.Querist"
+     />
+
+  <!-- права владельца ответа -->
+  <grant
+     permission="bbru.answers.EditAnswer"
+     role="bbru.answers.Respondent"
      />
 
 </configure>

@@ -4,11 +4,11 @@
    i18n_domain="bbru">
 
   <!--
-      Меню действий на странице вопроса
+      Меню действий c вопросом
     -->
 
   <browser:viewletManager
-     name="bbru.answer.question.actions"
+     name="bbru.answers.question.actions"
      view=".question.Pagelet"
      class="z3c.menu.ready2go.manager.MenuManager"
      template="actions.pt"
@@ -56,6 +56,42 @@
      filter_permission="bbru.answers.Answer"
      next_name=""
      weight="1"
+     />
+
+  <!--
+      Меню действий с ответом
+    -->
+
+  <browser:viewletManager
+     name="bbru.answers.answer.actions"
+     view=".answers.Simple"
+     class="z3c.menu.ready2go.manager.MenuManager"
+     template="actions.pt"
+     permission="zope.View"
+     />
+
+  <contextMenuItem
+     name="thanks"
+     view=".answers.Simple"
+     title="Этот ответ решает мою задачу"
+     permission="bbru.answers.EditQuestion"
+     weight="1"
+     />
+
+  <contextMenuItem
+     name="edit-answer"
+     view=".answers.Simple"
+     title="Редактировать"
+     permission="bbru.answers.EditAnswer"
+     weight="2"
+     />
+
+  <contextMenuItem
+     name="delete"
+     view=".answers.Simple"
+     title="Удалить"
+     permission="bbru.answers.Manage"
+     weight="3"
      />
 
 </configure>

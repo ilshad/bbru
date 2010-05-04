@@ -5,29 +5,31 @@
 """ Список ответов.
 """
 
-from zope.component import getUtility
+from zope.interface import Interface
+from zope.component import getUtility, getMultiAdapter
 from zope.authentication.interfaces import IAuthentication
 from zope.dublincore.interfaces import IZopeDublinCore
 
 class Ajax:
 
     def __call__(self):
+        answers = []
+        for name, ob in self.context.items():
+            view = getMultiAdapter((ob, self.request), Interface, "simple")
+            answers.append(view)
+        answers.sort(key=lambda x:int(x.context.__name__))
+        return u''.join(x() for x in answers)
+
+class Simple:
+
+    def __call__(self):
         formatter = self.request.locale.dates.getFormatter('date')
         auth = getUtility(IAuthentication)
 
-        answers = []
+        dc = IZopeDublinCore(self.context)
+        principal = auth.getPrincipal(dc.creators[0])
 
-        for k,v in self.context.items():
-            dc = IZopeDublinCore(v)
-            principal = auth.getPrincipal(dc.creators[0])
+        self.created = formatter.format(dc.created)
+        self.user = principal.title
 
-            answers.append({
-                    'name': k,
-                    'created': formatter.format(dc.created),
-                    'user': principal.title,
-                    'body': v.body                           
-                    })
-
-        answers.sort(key=lambda x:int(x['name']))
-
-        return self.index(answers=answers)
+        return self.index()

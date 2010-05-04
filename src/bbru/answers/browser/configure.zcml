@@ -45,6 +45,14 @@
      for="..interfaces.IQuestion"
      name="answers"
      class=".answers.Ajax"
+     permission="zope.View"
+     />
+
+  <!-- вложенный вид, вызываемый напрямую предыдущим -->
+  <browser:page
+     for="..interfaces.IQuestionAnswer"
+     name="simple"
+     class=".answers.Simple"
      template="answers.pt"
      permission="zope.View"
      />

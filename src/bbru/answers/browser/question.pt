@@ -12,7 +12,7 @@
     <td class="content" id="question-body" tal:content="structure context/body" />
   </tr>
   <tr class="actions">
-    <td tal:content="structure provider:bbru.answer.question.actions" />
+    <td tal:content="structure provider:bbru.answers.question.actions" />
   </tr>
   <tr>
     <td id="form-place"></td>
