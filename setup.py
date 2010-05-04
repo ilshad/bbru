@@ -58,6 +58,9 @@ setup(name='bbru',
                         'zope.sendmail',
 
                         'ice.control',
+
+                        'z3c.menu.simple',
+                        'z3c.menu.ready2go',
                         ],
       entry_points = """
       [paste.app_factory]

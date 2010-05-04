@@ -291,9 +291,7 @@ p.big {
 }
 .answer-wrapper {
     border-top: 5px solid #aaa;
-    /*border-bottom: 1px solid #aaa;*/
     border-left: 1px solid #aaa;
-    /*border-right: 1px solid #aaa;*/
     margin-top: 20px;
 }
 .content {

@@ -12,12 +12,14 @@
     <td class="content" id="question-body" tal:content="structure context/body" />
   </tr>
   <tr class="actions">
-    <td>
+    <td tal:content="structure provider:bbru.answer.question.actions" />
+    <!--
       <a class="action" id="do-answer">Ответить</a>
       <a class="action" id="edit-text">Текст</a>
       <a class="action" id="set-title">Заголовок</a>
       <a class="action">FAQ</a>
-    </td>
+    </td-->
+
   </tr>
   <tr>
     <td id="form-place"></td>

@@ -62,7 +62,7 @@ function load_text_form (context_url, params) {
     var url = context_url + "@@text";
 
     $('#form-place').load(url, params, function(text, status, response) {
-	console.log(response.status);
+
 	if (response.status == 202) {
 	    $('#question-body').html(text);
 	    $('#form-place').empty();

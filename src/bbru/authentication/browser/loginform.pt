@@ -1,4 +1,4 @@
-<tal:block define="principal python:request.principal.id">
+<div id="loginform" tal:define="principal python:request.principal.id">
   <h1 i18n:translate="" tal:condition="python: principal == 'zope.anybody'">
     Please provide Login Information
   </h1>
@@ -31,4 +31,4 @@
     </div>
     <input type="hidden" name="camefrom" tal:attributes="value request/camefrom | nothing">
   </form>
-</tal:block>
+</div>
