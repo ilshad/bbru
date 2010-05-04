@@ -24,11 +24,12 @@
   <role
      id="bbru.answers.Querist"
      title="Тот, кто задал вопрос (владелец вопроса)"
-     description="Эту роль ассигнуем локально при добавлении вопроса"
+     description="Эта роль ассигнуется локально при добавлении вопроса"
      />
   <role
      id="bbru.answers.Moderator"
      title="Модератор"
+     description="Эту роль нужно ассигновать кому-то на уровне сайта"
      />
 
   <!-- общие права -->
@@ -48,6 +49,10 @@
      />
   <grant
      permission="bbru.answers.Manage"
+     role="bbru.answers.Moderator"
+     />
+  <grant
+     permission="zope.app.dublincore.change"
      role="bbru.answers.Moderator"
      />
 

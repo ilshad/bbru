@@ -4,8 +4,9 @@
 
 1) Проапгрейдить сайт (конфигуратор Upgrade, см. doc/manage.rst).
 
-2) создать пользователя с правами bbru.answers.Question
-   и bbru.answers.Answer (конфигуратор Create User)
+2) создать пользователя (конфигуратор Create User) с ролью
+   bbru.Community и bbry.answers.Moderator (или двух разных
+   пользователей).
 
 3) временнная страница c листингом: http://localhost:8080/site/answers
 
