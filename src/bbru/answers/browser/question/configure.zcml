@@ -1,0 +1,63 @@
+<configure
+   xmlns="http://namespaces.zope.org/z3c"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="bbru">
+
+  <!-- общий список вопросов (временная страница,
+       здесь д.б. совершенно другое) -->
+  <pagelet
+     for="...interfaces.IAnswers"
+     name="index.html"
+     class=".listing.Pagelet"
+     permission="zope.View"
+     />
+  <template
+     for=".listing.Pagelet"
+     template="listing.pt"
+     />
+  
+  <!-- добавить вопрос -->
+  <pagelet
+     for="...interfaces.IAnswers"
+     name="add"
+     class=".add.Pagelet"
+     permission="bbru.answers.Question"
+     />
+  <template
+     for=".add.Pagelet"
+     template="add.pt"
+     />
+
+  <!-- просмотр вопроса -->
+  <pagelet
+     for="...interfaces.IQuestion"
+     name="index.html"
+     class=".display.Pagelet"
+     permission="zope.View"
+     />
+  <template
+     for=".display.Pagelet"
+     template="display.pt"
+     />
+
+  <!-- редактировать заголовок - ajax вид -->
+  <browser:page
+     for="...interfaces.IQuestion"
+     name="title"
+     class=".title.Ajax"
+     template="title.pt"
+     permission="bbru.answers.Manage"
+     />
+
+  <!-- редактировать текст вопроса - ajax-вид -->
+  <browser:page
+     for="...interfaces.IQuestion"
+     name="edit"
+     class=".edit.Ajax"
+     template="edit.pt"
+     permission="bbru.answers.EditQuestion"
+     />
+
+  <include file="actions.zcml" />
+
+</configure>

@@ -12,11 +12,11 @@ function get_form_params (submit) {
 }
 
 function load_answers_listing (context_url) {
-    $('#answers-place').load(context_url + "@@answers");
+    $('#answers-place').load(context_url + "@@listing");
 }
 
 function load_answer_form (context_url, params) {
-    var url = context_url + "@@answer";
+    var url = context_url + "@@add";
 
     $('#form-place').load(url, params, function(text, status, response) {
 	if (response.status == 202) {
@@ -59,7 +59,7 @@ function load_title_form (context_url) {
 }
 
 function load_text_form (context_url, params) {
-    var url = context_url + "@@text";
+    var url = context_url + "@@edit";
 
     $('#form-place').load(url, params, function(text, status, response) {
 
@@ -93,7 +93,7 @@ function question_init (context_url) {
 	return false;
     });
 
-    $('#edit-text').click(function() {
+    $('#edit-question').click(function() {
 	load_text_form(context_url, {});
 	return false;
     });

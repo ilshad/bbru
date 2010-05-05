@@ -59,7 +59,6 @@ setup(name='bbru',
 
                         'ice.control',
 
-                        'z3c.menu.simple',
                         'z3c.menu.ready2go',
                         ],
       entry_points = """

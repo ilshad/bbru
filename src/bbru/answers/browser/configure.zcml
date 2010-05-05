@@ -1,94 +1,13 @@
 <configure
-   xmlns="http://namespaces.zope.org/z3c"
-   xmlns:browser="http://namespaces.zope.org/browser"
-   xmlns:zope="http://namespaces.zope.org/zope"
+   xmlns="http://namespaces.zope.org/zope"
    i18n_domain="bbru">
-  
-  <!-- задать вопрос -->
-  <pagelet
-     for="..interfaces.IAnswers"
-     name="ask"
-     class=".ask.Pagelet"
-     permission="bbru.answers.Question"
-     />
-  <template
-     for=".ask.Pagelet"
-     template="ask.pt"
-     />
-
-  <!-- список вопросов -->
-  <pagelet
-     for="..interfaces.IAnswers"
-     name="index.html"
-     class=".listing.Pagelet"
-     permission="zope.View"
-     />
-  <template
-     for=".listing.Pagelet"
-     template="listing.pt"
-     />
-
-  <!-- просмотр вопроса -->
-  <pagelet
-     for="..interfaces.IQuestion"
-     name="index.html"
-     class=".question.Pagelet"
-     permission="zope.View"
-     />
-  <template
-     for=".question.Pagelet"
-     template="question.pt"
-     />
-
-  <!-- ответы на вопрос - ajax вид -->
-  <browser:page
-     for="..interfaces.IQuestion"
-     name="answers"
-     class=".answers.Ajax"
-     permission="zope.View"
-     />
-
-  <!-- вложенный вид, вызываемый напрямую предыдущим -->
-  <browser:page
-     for="..interfaces.IQuestionAnswer"
-     name="simple"
-     class=".answers.Simple"
-     template="answers.pt"
-     permission="zope.View"
-     />
-
-  <!-- ответить на вопрос - ajax вид -->
-  <browser:page
-     for="..interfaces.IQuestion"
-     name="answer"
-     class=".answer.Ajax"
-     template="answer.pt"
-     permission="bbru.answers.Answer"
-     />
-
-  <!-- назначить или редактировать заголовок - ajax вид -->
-  <browser:page
-     for="..interfaces.IQuestion"
-     name="title"
-     class=".title.Ajax"
-     template="title.pt"
-     permission="bbru.answers.Manage"
-     />
-
-  <!-- редактировать текст вопроса - ajax-вид -->
-  <browser:page
-     for="..interfaces.IQuestion"
-     name="text"
-     class=".text.Ajax"
-     template="text.pt"
-     permission="bbru.answers.EditQuestion"
-     />
 
   <!-- ресурс-библиотека -->
-  <zope:resourceLibrary name="bbru.answers">
-    <zope:directory source="javascript" include="answers.js" />
-  </zope:resourceLibrary>
+  <resourceLibrary name="bbru.answers">
+    <directory source="javascript" include="answers.js" />
+  </resourceLibrary>
 
-  <include file="actions.zcml" />
+  <include package=".question" />
+  <include package=".answer" />
 
 </configure>

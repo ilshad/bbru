@@ -1,0 +1,41 @@
+<configure
+   xmlns="http://namespaces.zope.org/browser"
+   i18n_domain="bbru">
+  
+  <!-- список ответов на вопрос - ajax вид -->
+  <page
+     for="...interfaces.IQuestion"
+     name="listing"
+     class=".listing.Ajax"
+     permission="zope.View"
+     />
+
+  <!-- показать отдельный ответ -->
+  <page
+     for="...interfaces.IQuestionAnswer"
+     name="display"
+     class=".display.View"
+     template="display.pt"
+     permission="zope.View"
+     />
+
+  <!-- ответить на вопрос - ajax вид -->
+  <page
+     for="...interfaces.IQuestion"
+     name="add"
+     class=".add.Ajax"
+     template="add.pt"
+     permission="bbru.answers.Answer"
+     />
+
+  <!-- редактировать ответ - ajax-вид -->
+  <page
+     for="...interfaces.IQuestionAnswer"
+     name="edit"
+     class=".edit.Ajax"
+     permission="bbru.answers.EditAnswer"
+     />
+
+  <include file="actions.zcml" />
+  
+</configure>

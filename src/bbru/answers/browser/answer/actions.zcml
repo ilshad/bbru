@@ -1,0 +1,42 @@
+<configure
+   xmlns="http://namespaces.zope.org/z3c"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="bbru">
+
+  <!--
+      Меню действий с ответом
+    -->
+
+  <browser:viewletManager
+     name="bbru.answers.answer.actions"
+     view=".display.View"
+     class="z3c.menu.ready2go.manager.MenuManager"
+     template="../actions/actions.pt"
+     permission="zope.View"
+     />
+
+  <contextMenuItem
+     name="thanks"
+     view=".display.View"
+     title="Этот ответ решает мою задачу"
+     permission="bbru.answers.EditQuestion"
+     weight="1"
+     />
+
+  <contextMenuItem
+     name="edit-answer"
+     view=".display.View"
+     title="Редактировать"
+     permission="bbru.answers.EditAnswer"
+     weight="2"
+     />
+
+  <contextMenuItem
+     name="delete"
+     view=".display.View"
+     title="Удалить"
+     permission="bbru.answers.Manage"
+     weight="3"
+     />
+
+</configure>

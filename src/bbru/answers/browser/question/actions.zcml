@@ -1,0 +1,61 @@
+<configure
+   xmlns="http://namespaces.zope.org/z3c"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   i18n_domain="bbru">
+
+  <!--
+      Меню действий c вопросом
+    -->
+
+  <browser:viewletManager
+     name="bbru.answers.question.actions"
+     view=".display.Pagelet"
+     class="z3c.menu.ready2go.manager.MenuManager"
+     template="../actions/actions.pt"
+     permission="zope.View"
+     />
+
+  <contextMenuItem
+     name="do-answer"
+     view=".display.Pagelet"
+     title="Ответить"
+     permission="bbru.answers.Answer"
+     weight="1"
+     />
+
+  <contextMenuItem
+     name="edit-question"
+     view=".display.Pagelet"
+     title="Текст"
+     permission="bbru.answers.EditQuestion"
+     weight="2"
+     />
+
+  <contextMenuItem
+     name="set-title"
+     view=".display.Pagelet"
+     title="Заголовок"
+     permission="bbru.answers.Manage"
+     weight="3"
+     />
+
+  <contextMenuItem
+     name="faq"
+     view=".display.Pagelet"
+     title="FAQ"
+     permission="bbru.answers.Manage"
+     weight="4"
+     />
+
+  <contextMenuItem
+     name="login"
+     view=".display.Pagelet"
+     title="Ответить"
+     class="..actions.actions.LoginAction"
+     permission="zope.View"
+     filter_permission="bbru.answers.Answer"
+     next_name=""
+     weight="1"
+     />
+
+</configure>
