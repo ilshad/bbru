@@ -1,13 +1,7 @@
 .. -*- mode: rst -*-
 
-Временно - пока, если нужно опробовать функционал:
+1) Нужны пользователи с правами bbru.Community и bbry.answers.Moderator
 
-1) Проапгрейдить сайт (конфигуратор Upgrade, см. doc/manage.rst).
+2) Временнная страница c листингом: http://localhost:8080/site/answers
 
-2) создать пользователя (конфигуратор Create User) с ролью
-   bbru.Community и bbry.answers.Moderator (или двух разных
-   пользователей).
-
-3) временнная страница c листингом: http://localhost:8080/site/answers
-
-4) добавление вопроса: http://localhost:8080/site/answers/ask
+3) Добавление вопроса: http://localhost:8080/site/answers/add

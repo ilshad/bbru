@@ -1,10 +1,16 @@
-<tal:block define="viewlets view/viewlets">
-  <tal:block condition="viewlets">
-    <a class="action"
-       tal:repeat="item viewlets"
-       tal:attributes="id item/__name__;
-		       href item/url"
-       tal:content="item/title" />
-  </tal:block>
-</tal:block>
+<tal:let define="viewlets view/viewlets">
+  <tal:if condition="viewlets">
+    <tal:loop repeat="item viewlets">
+      <tal:if condition="not: python: getattr(item, 'URL', None)">
+	<a tal:attributes="class string:${item/__name__} action;"
+	   tal:content="item/title" />
+      </tal:if>
 
+      <tal:if condition="python: getattr(item, 'URL', None)">
+	<a tal:attributes="class string:${item/__name__} action;
+			   href item/URL"
+	   tal:content="item/title" />
+      </tal:if>
+    </tal:loop>
+  </tal:if>
+</tal:let>

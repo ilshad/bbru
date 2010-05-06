@@ -13,4 +13,5 @@
       <td tal:content="structure provider:bbru.answers.answer.actions" />
     </tr>
   </table>
+  <div class="context_url hidden" tal:content="context/@@absolute_url" />
 </div>

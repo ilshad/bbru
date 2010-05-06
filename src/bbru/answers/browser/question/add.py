@@ -5,26 +5,28 @@
 """ Задать вопрос.
 """
 
-from zope.event import notify
-from zope.container.interfaces import INameChooser
-from zope.lifecycleevent import ObjectCreatedEvent
+from z3c.form import field
+from z3c.formui import form
 from zope.securitypolicy.interfaces import IPrincipalRoleManager
-from bbru.answers import Question
+from zope.container.interfaces import INameChooser
+from bbru.answers import Question, IQuestion
 
-class Pagelet:
+class Pagelet(form.AddForm):
 
-    def update(self):
-        body = self.request.get('body')
+    fields = field.Fields(IQuestion)
 
-        if body:
-            ob = Question()
-            ob.body = body
-            notify(ObjectCreatedEvent(ob))
-            name = INameChooser(self.context).chooseName(u"", ob)
-            self.context[name] = ob
+    def create(self, data):
+        ob = Question()
+        form.applyChanges(self, ob, data)
+        return ob
 
-            # сделать создателя владельцем вопроса
-            IPrincipalRoleManager(ob).assignRoleToPrincipal(
-                'bbru.answers.Querist', self.request.principal.id)
+    def add(self, ob):
+        name = INameChooser(self.context).chooseName(u"", ob)
+        self.context[name] = ob
 
-            self.request.response.redirect(".")
+        # сделать создателя владельцем вопроса
+        IPrincipalRoleManager(ob).assignRoleToPrincipal(
+            'bbru.answers.Querist', self.request.principal.id)
+
+    def nextURL(self):
+        return "."

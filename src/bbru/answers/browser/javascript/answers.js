@@ -12,7 +12,7 @@ function get_form_params (submit) {
 }
 
 function load_answers_listing (context_url) {
-    $('#answers-place').load(context_url + "@@listing");
+    $('#answers-place').load(context_url + "@@listing", {}, answer_init);
 }
 
 function load_answer_form (context_url, params) {
@@ -24,12 +24,12 @@ function load_answer_form (context_url, params) {
 	    load_answers_listing(context_url);
 	}
 
-	$('input.cancel-button').click(function() {
+	$('form input.cancel-button').click(function() {
 	    $('#form-place').empty();
 	    return false;
 	});
 
-	$('form.answer input:submit').click(function() {
+	$('form input:submit').click(function() {
 	    load_answer_form(context_url, get_form_params(this));
 	    return false;
 	});
@@ -38,64 +38,109 @@ function load_answer_form (context_url, params) {
 
 function load_title_form (context_url) {
     var url = context_url + "@@title";
-    
-    $('#form-place').load(url, {}, function() {
-	
-	$('input.cancel-button').click(function() {
-	    $('#form-place').empty();
+
+    $.post(url, {}, function(data) {
+
+	var container = $('#form-place');
+	container.append(data);
+
+	$('form input.cancel-button', container).click(function() {
+	    container.empty();
 	    return false;
 	});
 	
-	$('form.title input:submit').click(function() {
-	    $('#form-place').load(url, get_form_params(this), function(text) {
-		
-		$('#question-title').text(text);
+	$('form input:submit', container).click(function() {
+	    $.post(url, get_form_params(this), function(data) {
+		var title = $('.title', data).val();
+		$('#question-title').text(title);
 		$('#form-place').empty();
 	    });
-	    
 	    return false;
 	});
     });
 }
 
-function load_text_form (context_url, params) {
+function load_edit_question_form (context_url, params) {
     var url = context_url + "@@edit";
 
-    $('#form-place').load(url, params, function(text, status, response) {
+    $.post(url, params, function(data) {
 
-	if (response.status == 202) {
-	    $('#question-body').html(text);
-	    $('#form-place').empty();
+	var container = $('#form-place');
+
+	if ( $('.status', data).text() == "Data successfully updated.") {
+	    var body = $('textarea', data).text();
+	    $('#question-body').html(body);
+	    container.empty();
+	    return;
 	}
 
-	$('input.cancel-button').click(function() {
-	    $('#form-place').empty();
+	container.append(data);
+
+	$('form input.cancel-button', container).click(function() {
+	    container.empty();
 	    return false;
 	});
 
-	$('form.text input:submit').click(function() {
-	    load_text_form(context_url, get_form_params(this));
+	$('form input:submit', container).click(function() {
+	    load_edit_question_form(context_url, get_form_params(this));
 	    return false;
 	});
     });
+}
+
+function load_edit_answer_form(anchor, params) {
+    var place = $(anchor).parents('.answer-wrapper');
+    var context_url = $('div.context_url', place).text();
+    var question_url = $('.question .metadata .context_url').text();
+
+    $.post(context_url + "/@@edit", params, function(data) {
+
+	if ( $('.status', data).text() == "Data successfully updated.") {
+	    load_answers_listing(question_url);
+	    return;
+	}
+
+	var container = $('<div></div>');
+	container.append(data);
+	place.after(container);
+
+	$('form input:submit', container).click(function() {
+	    container.remove();
+	    load_edit_answer_form(anchor, get_form_params(this));
+	    return false;
+	});
+
+	$('form input.cancel-button', container).click(function() {
+	    container.remove();
+	    return false;
+	});
+
+    });
+
 }
 
 function question_init (context_url) {
     load_answers_listing(context_url);
 
-    $('#do-answer').click(function() {
+    $('.do-answer').click(function() {
 	load_answer_form(context_url);
 	return false;
     });
 
-    $('#set-title').click(function() {
+    $('.set-title').click(function() {
 	load_title_form(context_url);
 	return false;
     });
 
-    $('#edit-question').click(function() {
-	load_text_form(context_url, {});
+    $('.edit-question').click(function() {
+	load_edit_question_form(context_url, {});
 	return false;
     });
 }
 
+function answer_init () {
+    $('.edit-answer').click(function() {
+	load_edit_answer_form(this, {});
+	return false;
+    });
+}

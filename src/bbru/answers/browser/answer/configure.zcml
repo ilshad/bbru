@@ -1,9 +1,10 @@
 <configure
-   xmlns="http://namespaces.zope.org/browser"
+   xmlns="http://namespaces.zope.org/z3c"
+   xmlns:browser="http://namespaces.zope.org/browser"
    i18n_domain="bbru">
-  
+
   <!-- список ответов на вопрос - ajax вид -->
-  <page
+  <browser:page
      for="...interfaces.IQuestion"
      name="listing"
      class=".listing.Ajax"
@@ -11,7 +12,7 @@
      />
 
   <!-- показать отдельный ответ -->
-  <page
+  <browser:page
      for="...interfaces.IQuestionAnswer"
      name="display"
      class=".display.View"
@@ -20,22 +21,29 @@
      />
 
   <!-- ответить на вопрос - ajax вид -->
-  <page
+  <browser:page
      for="...interfaces.IQuestion"
      name="add"
      class=".add.Ajax"
-     template="add.pt"
      permission="bbru.answers.Answer"
+     />
+  <template
+     for=".add.Ajax"
+     template="add.pt"
      />
 
   <!-- редактировать ответ - ajax-вид -->
-  <page
+  <browser:page
      for="...interfaces.IQuestionAnswer"
      name="edit"
      class=".edit.Ajax"
      permission="bbru.answers.EditAnswer"
      />
+  <template
+     for=".edit.Ajax"
+     template="edit.pt"
+     />
 
   <include file="actions.zcml" />
-  
+
 </configure>

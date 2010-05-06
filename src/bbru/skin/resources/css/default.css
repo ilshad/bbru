@@ -114,6 +114,9 @@ h4 {
 .space {
     line-height: 2em;
 }
+.hidden {
+    display: none;
+}
 /**
 *
 * Forms

@@ -1,5 +1,6 @@
-<form class="answer" method="post" action="">
-  <textarea name="body" rows="10"></textarea>
-  <input type="submit" name="ask" value="Ответить" />
-  <input type="button" name="hide" value="Раздумал" class="cancel-button" />
+<form method="post" enctype="multipart/form-data" name="form"
+      tal:attributes="action request/URL">
+  <textarea name="form.widgets.body" rows="10"></textarea>
+  <input type="submit" name="form.buttons.add" value="Ответить" />
+  <input type="button" name="hide" value="Отмена" class="cancel-button" />
 </form>

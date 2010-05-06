@@ -6,6 +6,7 @@
       <span class="status">Решено</span>
       <a class="user" tal:content="view/user" />
       <span class="date" tal:content="view/created" />
+      <div class="context_url hidden" tal:content="string:${context/@@absolute_url}/" />
     </td>
   </tr>
   <tr>

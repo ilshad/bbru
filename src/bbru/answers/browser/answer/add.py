@@ -5,29 +5,30 @@
 """ Предложить ответ.
 """
 
-from zope.event import notify
-from zope.container.interfaces import INameChooser
-from zope.lifecycleevent import ObjectCreatedEvent
+from z3c.form import form, field
 from zope.securitypolicy.interfaces import IPrincipalRoleManager
-from bbru.answers import QuestionAnswer
+from zope.container.interfaces import INameChooser
+from bbru.answers import QuestionAnswer, IQuestionAnswer
 
-class Ajax:
+class Ajax(form.AddForm):
 
-    def __call__(self):
-        body = self.request.get('body')
+    fields = field.Fields(IQuestionAnswer)
 
-        if body:
-            ob = QuestionAnswer()
-            ob.body = body
-            notify(ObjectCreatedEvent(ob))
-            name = INameChooser(self.context).chooseName(u"", ob)
-            self.context[name] = ob
+    def create(self, data):
+        ob = QuestionAnswer()
+        form.applyChanges(self, ob, data)
+        return ob
 
-            # сделать создателя владельцем ответа
-            IPrincipalRoleManager(ob).assignRoleToPrincipal(
-                'bbru.answers.Respondent', self.request.principal.id)
+    def add(self, ob):
+        name = INameChooser(self.context).chooseName(u"", ob)
+        self.context[name] = ob
 
+        # сделать создателя владельцем ответа
+        IPrincipalRoleManager(ob).assignRoleToPrincipal(
+            'bbru.answers.Respondent', self.request.principal.id)
+
+    def render(self):
+        if self._finishedAdd:
             self.request.response.setStatus(202)
-            return None
-
-        return self.index()
+            return ""
+        return super(Ajax, self).render()

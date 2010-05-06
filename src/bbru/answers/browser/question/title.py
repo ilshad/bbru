@@ -5,20 +5,9 @@
 """ Редактировать заголовок ответа.
 """
 
-from zope.event import notify
-from zope.lifecycleevent import ObjectModifiedEvent, Attributes
+from z3c.form import form, field
 from zope.dublincore.interfaces import IZopeDublinCore
 
-class Ajax:
+class Ajax(form.EditForm):
 
-    def __call__(self):
-        dc = IZopeDublinCore(self.context)
-
-        if 'dctitle'in self.request:
-            dc.title = unicode(self.request['dctitle'])
-            description = Attributes(IZopeDublinCore, 'title')
-            notify(ObjectModifiedEvent(self.context, description))
-
-            return dc.title
-
-        return self.index(title=dc.title)
+    fields = field.Fields(IZopeDublinCore).select('title')

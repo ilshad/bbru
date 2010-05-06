@@ -45,8 +45,11 @@
      for="...interfaces.IQuestion"
      name="title"
      class=".title.Ajax"
-     template="title.pt"
      permission="bbru.answers.Manage"
+     />
+  <template
+     for=".title.Ajax"
+     template="title.pt"
      />
 
   <!-- редактировать текст вопроса - ajax-вид -->
@@ -54,8 +57,11 @@
      for="...interfaces.IQuestion"
      name="edit"
      class=".edit.Ajax"
-     template="edit.pt"
      permission="bbru.answers.EditQuestion"
+     />
+  <template
+     for=".edit.Ajax"
+     template="edit.pt"
      />
 
   <include file="actions.zcml" />

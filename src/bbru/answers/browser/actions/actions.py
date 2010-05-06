@@ -30,7 +30,7 @@ class LoginAction(FilterPermissionAction):
     next_name = None # указать в zcml-директиве
 
     @property
-    def url(self):
+    def URL(self):
         context_url = absoluteURL(self.context, self.request)
 
         return u'%s/loginForm.html?camefrom=%s' % (
