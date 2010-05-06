@@ -18,7 +18,7 @@
   <contextMenuItem
      name="thanks"
      view=".display.View"
-     title="Этот ответ решает мою задачу"
+     title="Этот решает мою задачу"
      permission="bbru.answers.EditQuestion"
      weight="1"
      />
@@ -32,10 +32,10 @@
      />
 
   <contextMenuItem
-     name="delete"
+     name="delete-answer"
      view=".display.View"
      title="Удалить"
-     permission="bbru.answers.Manage"
+     permission="bbru.answers.EditAnswer"
      weight="3"
      />
 

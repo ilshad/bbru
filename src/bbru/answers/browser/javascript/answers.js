@@ -119,6 +119,31 @@ function load_edit_answer_form(anchor, params) {
 
 }
 
+function load_delete_answer_form(anchor) {
+    var place = $(anchor).parents('.answer-wrapper');
+    var context_url = $('div.context_url', place).text();
+    var question_url = $('.question .metadata .context_url').text();
+
+    $.post(context_url + "/@@delete", {}, function(data) {
+
+	var container = $('<div></div>');
+	container.append(data);
+	place.after(container);
+
+	$('#form-buttons-delete', container).click(function() {
+	    $.post(context_url + "/@@delete", get_form_params(this), function () {
+		load_answers_listing(question_url);
+	    });
+	    return false;
+	});
+
+	$('#form-buttons-cancel', container).click(function() {
+	    container.remove();
+	    return false;
+	});
+    });
+}
+
 function question_init (context_url) {
     load_answers_listing(context_url);
 
@@ -141,6 +166,11 @@ function question_init (context_url) {
 function answer_init () {
     $('.edit-answer').click(function() {
 	load_edit_answer_form(this, {});
+	return false;
+    });
+
+    $('.delete-answer').click(function() {
+	load_delete_answer_form(this);
 	return false;
     });
 }

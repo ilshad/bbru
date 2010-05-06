@@ -44,6 +44,14 @@
      template="edit.pt"
      />
 
+  <!-- удалить ответ -->
+  <browser:page
+     for="...interfaces.IQuestionAnswer"
+     name="delete"
+     class=".delete.Ajax"
+     permission="bbru.answers.EditAnswer"
+     />
+
   <include file="actions.zcml" />
 
 </configure>

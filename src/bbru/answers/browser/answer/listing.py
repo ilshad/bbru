@@ -7,14 +7,16 @@
 """
 
 from zope.interface import Interface
-from zope.component import getUtility, getMultiAdapter
+from zope.component import getMultiAdapter
+from zope.dublincore.interfaces import IZopeDublinCore
 
 class Ajax:
 
     def __call__(self):
-        answers = []
-        for name, ob in self.context.items():
-            view = getMultiAdapter((ob, self.request), Interface, "display")
-            answers.append(view)
-        answers.sort(key=lambda x:int(x.context.__name__))
-        return u''.join(x() for x in answers)
+        answers = [x for x in self.context.values()]
+        answers.sort(key=lambda x:IZopeDublinCore(x).created)
+
+        views = [getMultiAdapter((x, self.request), Interface, "display")
+                 for x in answers]
+
+        return u''.join(x() for x in views)

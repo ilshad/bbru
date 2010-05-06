@@ -46,12 +46,8 @@
        interface="zope.container.interfaces.IReadContainer"
        />
     <require
-       attributes="__setitem__"
+       attributes="__setitem__ __delitem__"
        permission="bbru.answers.Answer"
-       />
-    <require
-       attributes="__delitem__"
-       permission="bbru.answers.Manage"
        />
   </class>
 

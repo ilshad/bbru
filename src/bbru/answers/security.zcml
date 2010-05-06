@@ -57,6 +57,10 @@
      role="bbru.answers.Moderator"
      />
   <grant
+     permission="bbru.answers.EditAnswer"
+     role="bbru.answers.Moderator"
+     />
+  <grant
      permission="bbru.answers.Manage"
      role="bbru.answers.Moderator"
      />
