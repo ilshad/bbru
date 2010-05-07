@@ -1,6 +1,6 @@
 .. -*- mode: rst -*-
 
-1) Нужны пользователи с правами bbru.Community и bbry.answers.Moderator
+1) Нужно создать пользователей с ролями bbru.Community и bbry.answers.Moderator
 
 2) Временнная страница c листингом: http://localhost:8080/site/answers
 

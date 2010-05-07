@@ -3,7 +3,7 @@
    i18n_domain="bbru">
 
   <include package="bbru" />
-  <include file="securitypolicy.zcml" />
+  <include package="bbru" file="securitypolicy.zcml" />
 
   <utility
      factory="bbru.tests.mail.FakeMailDelivery"
