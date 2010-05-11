@@ -39,7 +39,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 body {
     line-height: 1.3;
-    background: transparent url(../img/bg-gradient-top.gif) repeat-x scroll top;
+    background: #fff url(../img/bg-gradient-top.gif) repeat-x scroll top;
     color:#555;
     font-family:"Arial","Verdana","Helvetica",sans-serif;
     font-size:14px;
