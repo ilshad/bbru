@@ -144,24 +144,24 @@
 bbru.authentication.config.CreateUserConfigurator
 
 Воспользуемся этй возможностью, чтобы создать пользователя с логином
-`astoon`, безопасным паролем `1` и системной ролью `zope.Manager`::
+`frodo`, безопасным паролем `1` и системной ролью `zope.Manager`::
 
-  >>> browser.open(root_url + '/site/@@getControlDetailsConfigurators?form.pluginNames-empty-marker=&form.pluginNames=Create+User&Create+User.title=Ильшад+Хабибуллин&Create+User.login=astoon&Create+User.password=1&Create+User.roles.0.=zope.Manager&Create+User.roles.count=1&Create+User.permissions.0.&Create+User.permissions.count=0&form.actions.apply=Apply')
+  >>> browser.open(root_url + '/site/@@getControlDetailsConfigurators?form.pluginNames-empty-marker=&form.pluginNames=Create+User&Create+User.title=Frodo+Baggins&Create+User.login=frodo&Create+User.password=1&Create+User.roles.0.=zope.Manager&Create+User.roles.count=1&Create+User.permissions.0.&Create+User.permissions.count=0&form.actions.apply=Apply')
   >>> 'Applied: Create User' in browser.contents
   True
 
 Убидимся, что пользователь создан::
 
-  >>> user = pau['principals'][u'astoon']
+  >>> user = pau['principals'][u'frodo']
 
   >>> user.login
-  u'astoon'
+  u'frodo'
   
   >>> user.passwordManagerName
   'SSHA'
 
   >>> print user.title
-  Ильшад Хабибуллин
+  Frodo Baggins
 
 Проверка страницы управления генерациями
 ========================================

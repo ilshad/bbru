@@ -40,7 +40,7 @@
   <grantAll role="zope.Manager" />
 
   <grant
-     permission="zope.app.dublincore.view"
+     permission="zope.dublincore.view"
      role="zope.Anonymous"
      />
 

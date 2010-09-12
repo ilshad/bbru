@@ -65,7 +65,7 @@
      role="bbru.answers.Moderator"
      />
   <grant
-     permission="zope.app.dublincore.change"
+     permission="zope.dublincore.change"
      role="bbru.answers.Moderator"
      />
 

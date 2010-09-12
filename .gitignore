@@ -13,3 +13,5 @@ var/log/z3.log
 .installed.cfg
 *.pyc
 *.pyo
+
+extends-cache/

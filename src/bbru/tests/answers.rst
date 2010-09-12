@@ -109,9 +109,8 @@ bbru.answers - Управление Вопросами и Ответами
   >>> browser.open(site_url + '/answers/1/add')
   >>> browser.getControl(name='form.widgets.body').value=u'Thanks'
   >>> browser.getControl(name='form.buttons.add').click()
-  Traceback (most recent call last):
-  ...
-  HTTPError: HTTP Error 202: Accepted
+  >>> browser.headers['status']
+  '202 Accepted'
 
 Ответы::
 
