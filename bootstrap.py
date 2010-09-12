@@ -16,8 +16,6 @@
 Simply run this script in a directory containing a buildout.cfg.
 The script accepts buildout command-line options, so you can
 use the -c option to specify an alternate configuration file.
-
-$Id: bootstrap.py 105417 2009-11-01 15:15:20Z tarek $
 """
 
 import os, shutil, sys, tempfile, urllib2
@@ -56,11 +54,10 @@ else:
 USE_DISTRIBUTE = options.distribute
 args = args + ['bootstrap']
 
-to_reload = False
 try:
     import pkg_resources
+    import setuptools
     if not hasattr(pkg_resources, '_distribute'):
-        to_reload = True
         raise ImportError
 except ImportError:
     ez = {}
@@ -73,10 +70,8 @@ except ImportError:
                              ).read() in ez
         ez['use_setuptools'](to_dir=tmpeggs, download_delay=0)
 
-    if to_reload:
-        reload(pkg_resources)
-    else:
-        import pkg_resources
+    reload(sys.modules['pkg_resources'])
+    import pkg_resources
 
 if sys.platform == 'win32':
     def quote(c):

@@ -16,4 +16,15 @@
 
   <include package=".browser" />
 
+  <!--class class="zope.pluggableauth.authentication.PluggableAuthentication">
+    <require
+       interface="zope.container.interfaces.IReadContainer"
+       permission="zope.Public"
+       />
+    <require
+       interface="zope.container.interfaces.IWriteContainer"
+       permission="zope.ManageContent"
+       />
+  </class-->
+
 </configure>

@@ -2,17 +2,7 @@
    xmlns="http://namespaces.zope.org/zope"
    i18n_domain="bbru">
 
-  <include package="ice.control.zcml" />
-  <include package="ice.control" />
-  <include package="ice.control.repl" />
-
-  <include package="z3c.layer.pagelet" />
-
-  <include package="z3c.menu.ready2go" file="meta.zcml" />
-  <include package="z3c.menu.ready2go" />
-
-  <include package="zope.sendmail" file="meta.zcml" />
-  <include package="zope.sendmail" />
+  <include file="require.zcml" />
 
   <role id="bbru.Community" title="Сообщество" />
 

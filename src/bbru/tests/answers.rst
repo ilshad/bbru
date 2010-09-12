@@ -104,10 +104,10 @@ bbru.answers - Управление Вопросами и Ответами
   >>> browser.url == site_url + '/answers/1/'
   True
 
-Ответ - форма для ajax-вида возвращает cnfnec 202::
+Ответ - форма для ajax-вида возвращает статус 202::
 
   >>> browser.open(site_url + '/answers/1/add')
-  >>> browser.getControl(name='form.widgets.body').value='Thanks'
+  >>> browser.getControl(name='form.widgets.body').value=u'Thanks'
   >>> browser.getControl(name='form.buttons.add').click()
   Traceback (most recent call last):
   ...

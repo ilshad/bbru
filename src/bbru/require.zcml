@@ -1,0 +1,22 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   i18n_domain="zope">
+
+  <include package="ice.control.zcml" />
+  <include package="ice.control" />
+  <include package="ice.control.repl" />
+
+  <include package="zope.app.zcmlfiles" file="menus.zcml" />
+  <include package="zope.app.form.browser" file="meta.zcml" />
+  <include package="zope.app.container.browser" file="meta.zcml" />
+  <include package="z3c.menu.ready2go" file="meta.zcml" />
+  <include package="zope.sendmail" file="meta.zcml" />
+
+  <include package="zope.app.form.browser" />
+  <include package="zope.app.authentication" />
+  <include package="z3c.layer.pagelet" />
+  <include package="z3c.menu.ready2go" />
+  <include package="zope.pluggableauth" />
+  <include package="zope.sendmail" />
+
+</configure>
