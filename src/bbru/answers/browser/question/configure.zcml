@@ -23,10 +23,6 @@
      class=".add.Pagelet"
      permission="bbru.answers.Question"
      />
-  <template
-     for=".add.Pagelet"
-     template="add.pt"
-     />
 
   <!-- просмотр вопроса -->
   <pagelet
@@ -47,10 +43,6 @@
      class=".title.Ajax"
      permission="bbru.answers.Manage"
      />
-  <template
-     for=".title.Ajax"
-     template="title.pt"
-     />
 
   <!-- редактировать текст вопроса - ajax-вид -->
   <browser:page
@@ -58,10 +50,6 @@
      name="edit"
      class=".edit.Ajax"
      permission="bbru.answers.EditQuestion"
-     />
-  <template
-     for=".edit.Ajax"
-     template="edit.pt"
      />
 
   <include file="actions.zcml" />

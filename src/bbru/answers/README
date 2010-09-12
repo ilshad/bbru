@@ -1,6 +1,12 @@
 .. -*- mode: rst -*-
 
-1) Нужно создать пользователей с ролями bbru.Community и bbry.answers.Moderator
+Временная инструкция.
+---------------------
+
+1) Нужно создать пользователей с ролями bbru.Community и bbru.answers.Moderator
+
+2) Сайт запустить с deploy.ini (bin/paster serve deploy.ini), чтобы не трекать пермишены,
+   а редиректиться на логинпейдж.
 
 2) Временнная страница c листингом: http://localhost:8080/site/answers
 

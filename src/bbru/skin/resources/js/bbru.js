@@ -8,7 +8,7 @@
 // Loading...
 $(function () {
     $("#spinner").ajaxStart(
-	function () {$(this).show()}
+	function () {$(this).show();}
     ).ajaxStop(
-	function () {$(this).hide()});
+	function () {$(this).hide();});
 });

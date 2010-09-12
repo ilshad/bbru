@@ -1,5 +1,0 @@
-<form method="post" enctype="multipart/form-data" name="form"
-      tal:attributes="action request/URL">
-  <textarea name="form.widgets.body" rows="20"></textarea>
-  <input type="submit" name="form.buttons.add" value="Задать вопрос" />
-</form>

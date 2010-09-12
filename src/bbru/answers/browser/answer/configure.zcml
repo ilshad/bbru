@@ -27,10 +27,6 @@
      class=".add.Ajax"
      permission="bbru.answers.Answer"
      />
-  <template
-     for=".add.Ajax"
-     template="add.pt"
-     />
 
   <!-- редактировать ответ - ajax-вид -->
   <browser:page
@@ -38,10 +34,6 @@
      name="edit"
      class=".edit.Ajax"
      permission="bbru.answers.EditAnswer"
-     />
-  <template
-     for=".edit.Ajax"
-     template="edit.pt"
      />
 
   <!-- удалить ответ -->

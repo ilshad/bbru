@@ -139,7 +139,7 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus, select {
 }
 textarea {
     width: 99%;
-/*    height: 100px;*/
+    height: 200px;
 }
 input[type=submit], input[type=reset], input[type=button] {
     border: 1px solid #bfbfbf;
@@ -172,7 +172,11 @@ form .status {
     color: darkred;
 }
 .required-info {
-    color: #C3CBD0;
+    display: none;
+/*    color: #C3CBD0;*/
+}
+span.required {
+    display: none;
 }
 .row .label label {
     color: #94AAB1;
