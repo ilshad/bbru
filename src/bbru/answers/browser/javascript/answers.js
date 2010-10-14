@@ -3,7 +3,7 @@
 * This code was developed for http://bluebream.ru by its community and
 * placed under Public Domain.
 *
-**/ 
+**/
 
 function get_form_params (submit) {
     var form = $(submit).parents('form')[0];
@@ -24,10 +24,11 @@ function load_answer_form (context_url, params) {
 	    load_answers_listing(context_url);
 	}
 
-	$('form input.cancel-button').click(function() {
+	// -- не используется сейчас --
+	/*$('form input.cancel-button').click(function() {
 	    $('#form-place').empty();
 	    return false;
-	});
+	});*/
 
 	$('form input:submit').click(function() {
 	    load_answer_form(context_url, get_form_params(this));
@@ -44,16 +45,17 @@ function load_title_form (context_url) {
 	var container = $('#form-place');
 	container.append(data);
 
-	$('form input.cancel-button', container).click(function() {
+	// -- не используется сейчас --
+	/*$('form input.cancel-button', container).click(function() {
 	    container.empty();
 	    return false;
-	});
-	
+	});*/
+
 	$('form input:submit', container).click(function() {
 	    $.post(url, get_form_params(this), function(data) {
-		var title = $('.title', data).val();
+		var title = $('#form-widgets-title', data).val();
 		$('#question-title').text(title);
-		$('#form-place').empty();
+		container.empty();
 	    });
 	    return false;
 	});
@@ -67,25 +69,27 @@ function load_edit_question_form (context_url, params) {
 
 	var container = $('#form-place');
 
-	if ( $('.status', data).text() == "Data successfully updated.") {
-	    var body = $('textarea', data).text();
+	if ( $('.summary', data).text() == "Data successfully updated.") {
+	    var body = $('#form-widgets-body', data).text();
 	    $('#question-body').html(body);
 	    container.empty();
 	    return;
+	} else {
+	    container.append(data);
+
+	    // -- не используется сейчас --
+	    /*$('form input.cancel-button', container).click(function() {
+	     container.empty();
+	     return false;
+	     });*/
+
+	    $('form input:submit', container).click(function() {
+		container.empty();
+		load_edit_question_form(context_url, get_form_params(this));
+		return false;
+	    });
 	}
-
-	container.append(data);
-
-	$('form input.cancel-button', container).click(function() {
-	    container.empty();
-	    return false;
-	});
-
-	$('form input:submit', container).click(function() {
-	    load_edit_question_form(context_url, get_form_params(this));
-	    return false;
-	});
-    });
+     });
 }
 
 function load_edit_answer_form(anchor, params) {
@@ -95,7 +99,7 @@ function load_edit_answer_form(anchor, params) {
 
     $.post(context_url + "/@@edit", params, function(data) {
 
-	if ( $('.status', data).text() == "Data successfully updated.") {
+	if ( $('.summary', data).text() == "Data successfully updated.") {
 	    load_answers_listing(question_url);
 	    return;
 	}
@@ -110,10 +114,11 @@ function load_edit_answer_form(anchor, params) {
 	    return false;
 	});
 
-	$('form input.cancel-button', container).click(function() {
+	// -- не используется сейчас --
+	/*$('form input.cancel-button', container).click(function() {
 	    container.remove();
 	    return false;
-	});
+	});*/
 
     });
 
